@@ -1,0 +1,2 @@
+Aug 06, 2021 2:35:54 AM org.apache.fop.fonts.truetype.OpenFont seekTab
+INFO: Dirtab PCLT not found.

@@ -1,0 +1,2 @@
+Aug 06, 2021 12:57:53 AM org.apache.fop.layoutmgr.table.TableContentLayoutManager addAreas
+SEVERE: tablePositions empty. Please send your FO file to fop-users@xmlgraphics.apache.org

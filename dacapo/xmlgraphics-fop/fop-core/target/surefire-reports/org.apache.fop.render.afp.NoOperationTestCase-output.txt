@@ -1,0 +1,8 @@
+Aug 06, 2021 2:07:40 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: No AFP fonts configured. Using default setup.
+Aug 06, 2021 2:07:41 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 2:07:41 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #2.
+Aug 06, 2021 2:07:41 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #3.

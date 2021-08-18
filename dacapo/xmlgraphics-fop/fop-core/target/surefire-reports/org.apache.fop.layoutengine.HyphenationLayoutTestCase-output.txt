@@ -1,0 +1,12 @@
+Test: block_hyphenation_kerning_non_bmp.xml
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+  [WARN ] Font "Aegean600,normal,400" not found. Substituting with "any,normal,400".
+Test: hyphenation-pattern_fallback.xml
+  [WARN ] Hyphenation pattern not found. URI: em.

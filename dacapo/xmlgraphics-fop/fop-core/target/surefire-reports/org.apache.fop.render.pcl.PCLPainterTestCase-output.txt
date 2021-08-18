@@ -1,0 +1,16 @@
+Aug 06, 2021 2:31:30 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 116 (0x74, t) not available in font null
+Aug 06, 2021 2:31:30 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 101 (0x65, e) not available in font null
+Aug 06, 2021 2:31:30 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 115 (0x73, s) not available in font null
+Aug 06, 2021 2:31:30 AM org.apache.fop.fonts.truetype.OpenFont seekTab
+INFO: Dirtab PCLT not found.
+Aug 06, 2021 2:31:31 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 116 (0x74, t) not available in font null
+Aug 06, 2021 2:31:31 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 101 (0x65, e) not available in font null
+Aug 06, 2021 2:31:31 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 115 (0x73, s) not available in font null
+Aug 06, 2021 2:31:31 AM org.apache.fop.fonts.truetype.OpenFont seekTab
+INFO: Dirtab PCLT not found.

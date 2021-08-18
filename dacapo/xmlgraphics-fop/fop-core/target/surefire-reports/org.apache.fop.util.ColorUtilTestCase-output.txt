@@ -1,0 +1,6 @@
+Aug 06, 2021 3:30:27 AM org.apache.fop.util.ColorSpaceCache get
+WARNING: Exception thrown resolving the color space: /Users/wallace/gin_projects/xmlgraphics-fop/fop/invalid.icm (No such file or directory)
+Aug 06, 2021 3:30:27 AM org.apache.fop.util.ColorSpaceCache get
+WARNING: Color profile 'invalid.icm' not found.
+Aug 06, 2021 3:30:27 AM org.apache.fop.util.ColorUtil parseAsFopRgbIcc
+WARNING: Color profile 'invalid.icm' not found. Using sRGB replacement values.

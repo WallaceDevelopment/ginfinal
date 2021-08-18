@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef classname="org.apache.fop.tools.EventProducerCollectorTask" name="collectEvents">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+      <path refid="maven.test.classpath"/>
+    </classpath>
+  </taskdef>
+  <collectEvents destdir="/Users/wallace/gin_projects/xmlgraphics-fop/fop-events/target/test-classes">
+    <fileset dir="/Users/wallace/gin_projects/xmlgraphics-fop/fop-events/src/test/java">
+      <include name="**/events/TestEventProducer.java"/>
+    </fileset>
+  </collectEvents>
+</target>
+</project>

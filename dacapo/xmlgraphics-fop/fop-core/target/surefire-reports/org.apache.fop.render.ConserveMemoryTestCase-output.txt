@@ -1,0 +1,30 @@
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: A piece of text or an image’s alternate text is missing language information (See position 9:12)
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: A piece of text or an image’s alternate text is missing language information (See position 9:12)
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: A piece of text or an image’s alternate text is missing language information (See position 9:12)
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: A piece of text or an image’s alternate text is missing language information (See position 9:12)
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: A piece of text or an image’s alternate text is missing language information (See position 9:12)
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Page 1: Unresolved ID reference "a" found.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Page 1: Unresolved ID reference "a" found.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Page 1: Unresolved ID reference "a" found.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Page 1: Unresolved ID reference "a" found.
+Aug 06, 2021 1:50:16 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Page 1: Unresolved ID reference "a" found.

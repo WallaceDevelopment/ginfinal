@@ -1,0 +1,4 @@
+Aug 05, 2021 8:45:45 PM org.apache.fop.afp.modca.AbstractAFPObject truncate
+WARNING: truncated character string 'abc', longer than 3 chars
+Aug 05, 2021 8:45:45 PM org.apache.fop.afp.modca.AbstractAFPObject truncate
+WARNING: truncated character string '', longer than 0 chars

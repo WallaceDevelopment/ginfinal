@@ -1,0 +1,6 @@
+Aug 06, 2021 3:02:25 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 116 (0x74, t) not available in font null
+Aug 06, 2021 3:02:27 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 101 (0x65, e) not available in font null
+Aug 06, 2021 3:02:27 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 115 (0x73, s) not available in font null

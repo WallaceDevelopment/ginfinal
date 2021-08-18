@@ -1,0 +1,2 @@
+Aug 06, 2021 12:55:28 AM org.apache.fop.render.bitmap.TIFFRendererConfigurator setCompressionMethod
+INFO: TIFF compression set to PackBits

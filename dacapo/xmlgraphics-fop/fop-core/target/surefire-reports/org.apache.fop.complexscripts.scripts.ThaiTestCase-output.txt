@@ -1,0 +1,16 @@
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3633 (0xe31, maihanakatthai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3597 (0xe0d, yoyingthai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3634 (0xe32, saraaathai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 32 (0x20, space) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3648 (0xe40, saraethai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3621 (0xe25, lolingthai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3586 (0xe02, khokhaithai) not available in font null
+Aug 05, 2021 11:35:42 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Many requested glyphs are not available in font null

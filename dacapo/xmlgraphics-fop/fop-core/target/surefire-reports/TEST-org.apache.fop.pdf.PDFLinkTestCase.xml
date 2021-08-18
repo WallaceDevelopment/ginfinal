@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.fop.pdf.PDFLinkTestCase" time="0.298" tests="181" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.291-b10"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/wallace/gin_projects/xmlgraphics-fop"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/wallace/gin_projects/xmlgraphics-fop"/>
+    <property name="java.runtime.version" value="1.8.0_291-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/5j/q__58rqs1ds2w8dnwvnf95hr0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.6.3_1/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/wallace/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.6.3_1/libexec/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.16"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.6.3_1/libexec/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/wallace"/>
+    <property name="user.timezone" value="Europe/London"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="wallace"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.6.3_1/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_291"/>
+    <property name="java.ext.dirs" value="/Users/wallace/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.6.3_1/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testLinks[0]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[1]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[2]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[3]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[4]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[5]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[6]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[7]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0"/>
+  <testcase name="testLinks[8]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[9]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[10]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[11]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[12]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[13]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[14]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[15]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[16]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[17]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[18]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[19]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[20]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[21]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[22]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[23]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[24]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[25]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[26]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[27]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[28]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[29]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[30]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[31]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[32]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[33]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[34]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[35]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[36]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[37]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[38]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[39]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[40]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[41]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[42]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[43]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[44]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[45]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[46]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[47]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[48]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[49]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[50]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[51]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.003"/>
+  <testcase name="testLinks[52]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[53]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[54]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[55]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[56]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[57]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[58]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[59]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[60]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[61]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[62]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[63]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[64]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[65]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[66]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[67]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[68]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[69]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[70]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[71]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[72]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[73]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[74]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[75]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[76]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[77]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[78]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[79]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[80]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[81]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[82]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[83]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[84]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[85]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[86]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[87]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[88]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[89]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[90]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[91]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[92]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[93]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[94]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[95]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[96]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[97]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[98]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[99]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[100]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[101]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[102]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[103]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[104]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[105]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[106]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[107]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[108]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[109]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[110]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[111]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[112]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[113]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[114]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[115]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[116]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[117]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[118]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[119]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[120]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[121]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[122]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[123]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[124]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[125]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[126]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[127]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[128]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[129]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[130]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[131]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[132]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[133]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[134]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[135]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[136]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[137]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[138]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[139]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[140]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[141]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[142]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[143]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[144]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[145]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[146]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[147]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[148]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[149]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[150]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[151]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[152]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0"/>
+  <testcase name="testLinks[153]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[154]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[155]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[156]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[157]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[158]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[159]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[160]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[161]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[162]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[163]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[164]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[165]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[166]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[167]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[168]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[169]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[170]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[171]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[172]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[173]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[174]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[175]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[176]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[177]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[178]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+  <testcase name="testLinks[179]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.002"/>
+  <testcase name="testLinks[180]" classname="org.apache.fop.pdf.PDFLinkTestCase" time="0.001"/>
+</testsuite>

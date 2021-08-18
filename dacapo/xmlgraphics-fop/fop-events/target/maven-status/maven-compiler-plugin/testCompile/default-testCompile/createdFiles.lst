@@ -1,0 +1,5 @@
+org/apache/fop/events/BasicEventTestCase.class
+org/apache/fop/events/BasicEventTestCase$MyEventListener.class
+org/apache/fop/events/BasicEventTestCase$1.class
+org/apache/fop/events/TestEventProducer$Provider.class
+org/apache/fop/events/TestEventProducer.class

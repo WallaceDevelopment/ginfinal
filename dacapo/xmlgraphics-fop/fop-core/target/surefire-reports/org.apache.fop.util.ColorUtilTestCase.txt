@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.fop.util.ColorUtilTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.133 sec - in org.apache.fop.util.ColorUtilTestCase

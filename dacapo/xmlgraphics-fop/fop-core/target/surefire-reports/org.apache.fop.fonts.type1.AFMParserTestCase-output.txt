@@ -1,0 +1,308 @@
+Aug 06, 2021 12:49:18 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'space' has an incorrect code point: 33. Changed to 32
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'space' has an incorrect code point: 33. Changed to 32
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'exclam' has an incorrect code point: 34. Changed to 33
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotedbl' has an incorrect code point: 35. Changed to 34
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'numbersign' has an incorrect code point: 36. Changed to 35
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'dollar' has an incorrect code point: 37. Changed to 36
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'percent' has an incorrect code point: 38. Changed to 37
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ampersand' has an incorrect code point: 39. Changed to 38
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quoteright' has an incorrect code point: 40. Changed to 39
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'parenleft' has an incorrect code point: 41. Changed to 40
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'parenright' has an incorrect code point: 42. Changed to 41
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'asterisk' has an incorrect code point: 43. Changed to 42
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'plus' has an incorrect code point: 44. Changed to 43
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'comma' has an incorrect code point: 45. Changed to 44
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'hyphen' has an incorrect code point: 46. Changed to 45
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'hyphen' has an incorrect code point: 46. Changed to 45
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'period' has an incorrect code point: 47. Changed to 46
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'slash' has an incorrect code point: 48. Changed to 47
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'zero' has an incorrect code point: 49. Changed to 48
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'one' has an incorrect code point: 50. Changed to 49
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'two' has an incorrect code point: 51. Changed to 50
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'three' has an incorrect code point: 52. Changed to 51
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'four' has an incorrect code point: 53. Changed to 52
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'five' has an incorrect code point: 54. Changed to 53
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'six' has an incorrect code point: 55. Changed to 54
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'seven' has an incorrect code point: 56. Changed to 55
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'eight' has an incorrect code point: 57. Changed to 56
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'nine' has an incorrect code point: 58. Changed to 57
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'colon' has an incorrect code point: 59. Changed to 58
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'semicolon' has an incorrect code point: 60. Changed to 59
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'less' has an incorrect code point: 61. Changed to 60
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'equal' has an incorrect code point: 62. Changed to 61
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'greater' has an incorrect code point: 63. Changed to 62
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'question' has an incorrect code point: 64. Changed to 63
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'at' has an incorrect code point: 65. Changed to 64
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'A' has an incorrect code point: 66. Changed to 65
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'B' has an incorrect code point: 67. Changed to 66
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'C' has an incorrect code point: 68. Changed to 67
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'D' has an incorrect code point: 69. Changed to 68
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'E' has an incorrect code point: 70. Changed to 69
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'F' has an incorrect code point: 71. Changed to 70
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'G' has an incorrect code point: 72. Changed to 71
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'H' has an incorrect code point: 73. Changed to 72
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'I' has an incorrect code point: 74. Changed to 73
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'J' has an incorrect code point: 75. Changed to 74
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'K' has an incorrect code point: 76. Changed to 75
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'L' has an incorrect code point: 77. Changed to 76
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'M' has an incorrect code point: 78. Changed to 77
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'N' has an incorrect code point: 79. Changed to 78
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'O' has an incorrect code point: 80. Changed to 79
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'P' has an incorrect code point: 81. Changed to 80
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'Q' has an incorrect code point: 82. Changed to 81
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'R' has an incorrect code point: 83. Changed to 82
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'S' has an incorrect code point: 84. Changed to 83
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'T' has an incorrect code point: 85. Changed to 84
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'U' has an incorrect code point: 86. Changed to 85
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'V' has an incorrect code point: 87. Changed to 86
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'W' has an incorrect code point: 88. Changed to 87
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'X' has an incorrect code point: 89. Changed to 88
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'Y' has an incorrect code point: 90. Changed to 89
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'Z' has an incorrect code point: 91. Changed to 90
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'bracketleft' has an incorrect code point: 92. Changed to 91
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'backslash' has an incorrect code point: 93. Changed to 92
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'bracketright' has an incorrect code point: 94. Changed to 93
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'asciicircum' has an incorrect code point: 95. Changed to 94
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'underscore' has an incorrect code point: 96. Changed to 95
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quoteleft' has an incorrect code point: 97. Changed to 96
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'a' has an incorrect code point: 98. Changed to 97
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'b' has an incorrect code point: 99. Changed to 98
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'c' has an incorrect code point: 100. Changed to 99
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'd' has an incorrect code point: 101. Changed to 100
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'e' has an incorrect code point: 102. Changed to 101
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'f' has an incorrect code point: 103. Changed to 102
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'g' has an incorrect code point: 104. Changed to 103
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'h' has an incorrect code point: 105. Changed to 104
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'i' has an incorrect code point: 106. Changed to 105
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'j' has an incorrect code point: 107. Changed to 106
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'k' has an incorrect code point: 108. Changed to 107
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'l' has an incorrect code point: 109. Changed to 108
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'm' has an incorrect code point: 110. Changed to 109
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'n' has an incorrect code point: 111. Changed to 110
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'o' has an incorrect code point: 112. Changed to 111
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'p' has an incorrect code point: 113. Changed to 112
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'q' has an incorrect code point: 114. Changed to 113
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'r' has an incorrect code point: 115. Changed to 114
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 's' has an incorrect code point: 116. Changed to 115
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 't' has an incorrect code point: 117. Changed to 116
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'u' has an incorrect code point: 118. Changed to 117
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'v' has an incorrect code point: 119. Changed to 118
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'w' has an incorrect code point: 120. Changed to 119
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'x' has an incorrect code point: 121. Changed to 120
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'y' has an incorrect code point: 122. Changed to 121
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'z' has an incorrect code point: 123. Changed to 122
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'braceleft' has an incorrect code point: 124. Changed to 123
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'bar' has an incorrect code point: 125. Changed to 124
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'braceright' has an incorrect code point: 126. Changed to 125
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'asciitilde' has an incorrect code point: 127. Changed to 126
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'exclamdown' has an incorrect code point: 162. Changed to 161
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'cent' has an incorrect code point: 163. Changed to 162
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'sterling' has an incorrect code point: 164. Changed to 163
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'fraction' has an incorrect code point: 165. Changed to 164
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'fraction' has an incorrect code point: 165. Changed to 164
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'yen' has an incorrect code point: 166. Changed to 165
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'florin' has an incorrect code point: 167. Changed to 166
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'section' has an incorrect code point: 168. Changed to 167
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'currency' has an incorrect code point: 169. Changed to 168
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotesingle' has an incorrect code point: 170. Changed to 169
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotedblleft' has an incorrect code point: 171. Changed to 170
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'guillemotleft' has an incorrect code point: 172. Changed to 171
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'guilsinglleft' has an incorrect code point: 173. Changed to 172
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'guilsinglright' has an incorrect code point: 174. Changed to 173
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'fi' has an incorrect code point: 175. Changed to 174
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'fl' has an incorrect code point: 176. Changed to 175
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'endash' has an incorrect code point: 178. Changed to 177
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'dagger' has an incorrect code point: 179. Changed to 178
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'daggerdbl' has an incorrect code point: 180. Changed to 179
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'periodcentered' has an incorrect code point: 181. Changed to 180
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'periodcentered' has an incorrect code point: 181. Changed to 180
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'paragraph' has an incorrect code point: 183. Changed to 182
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'bullet' has an incorrect code point: 184. Changed to 183
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotesinglbase' has an incorrect code point: 185. Changed to 184
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotedblbase' has an incorrect code point: 186. Changed to 185
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'quotedblright' has an incorrect code point: 187. Changed to 186
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'guillemotright' has an incorrect code point: 188. Changed to 187
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ellipsis' has an incorrect code point: 189. Changed to 188
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'perthousand' has an incorrect code point: 190. Changed to 189
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'questiondown' has an incorrect code point: 192. Changed to 191
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'grave' has an incorrect code point: 194. Changed to 193
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'acute' has an incorrect code point: 195. Changed to 194
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'circumflex' has an incorrect code point: 196. Changed to 195
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'tilde' has an incorrect code point: 197. Changed to 196
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'macron' has an incorrect code point: 198. Changed to 197
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'macron' has an incorrect code point: 198. Changed to 197
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'breve' has an incorrect code point: 199. Changed to 198
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'dotaccent' has an incorrect code point: 200. Changed to 199
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'dieresis' has an incorrect code point: 201. Changed to 200
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ring' has an incorrect code point: 203. Changed to 202
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'cedilla' has an incorrect code point: 204. Changed to 203
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'hungarumlaut' has an incorrect code point: 206. Changed to 205
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ogonek' has an incorrect code point: 207. Changed to 206
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'caron' has an incorrect code point: 208. Changed to 207
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'emdash' has an incorrect code point: 209. Changed to 208
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'AE' has an incorrect code point: 226. Changed to 225
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ordfeminine' has an incorrect code point: 228. Changed to 227
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'Lslash' has an incorrect code point: 233. Changed to 232
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'Oslash' has an incorrect code point: 234. Changed to 233
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'OE' has an incorrect code point: 235. Changed to 234
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ordmasculine' has an incorrect code point: 236. Changed to 235
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'ae' has an incorrect code point: 242. Changed to 241
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'dotlessi' has an incorrect code point: 246. Changed to 245
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'lslash' has an incorrect code point: 249. Changed to 248
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'oslash' has an incorrect code point: 250. Changed to 249
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'oe' has an incorrect code point: 251. Changed to 250
+Aug 06, 2021 12:49:19 AM org.apache.fop.fonts.type1.CharMetricsHandler$AdobeStandardCharMetricsHandler parse
+INFO: null: named character 'germandbls' has an incorrect code point: 252. Changed to 251

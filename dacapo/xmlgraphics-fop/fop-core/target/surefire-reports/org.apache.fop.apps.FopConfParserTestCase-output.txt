@@ -1,0 +1,4 @@
+Aug 05, 2021 11:09:43 PM org.apache.fop.apps.FopConfParser configure
+INFO: Default page-height set to: 12.345
+Aug 05, 2021 11:09:43 PM org.apache.fop.apps.FopConfParser configure
+INFO: Default page-width set to: 67.89

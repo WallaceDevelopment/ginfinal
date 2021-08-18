@@ -1,0 +1,6 @@
+Aug 05, 2021 8:34:05 PM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 05, 2021 8:34:05 PM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #2.
+Aug 05, 2021 8:34:05 PM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #3.

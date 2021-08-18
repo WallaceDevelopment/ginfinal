@@ -1,0 +1,2 @@
+Test: table/too-many-columns_header.fo
+  [FATAL] The column-number or number of cells in the row overflows the number of fo:table-columns specified for the table. (See position 40:25)

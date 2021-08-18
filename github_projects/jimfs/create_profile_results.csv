@@ -1,0 +1,2 @@
+Project,MethodIndex,Method,Count,Tests
+jimfs,2,com.google.common.jimfs.Jimfs.getSystemJimfsProvider(),3,com.google.common.jimfs.JimfsAsynchronousFileChannelTest.testClosedChannel [jimfs]

@@ -1,0 +1,16 @@
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 0 (0x0, ) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1 (0x1, controlSTX) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 2 (0x2, controlSOT) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 3 (0x3, controlETX) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 4 (0x4, controlEOT) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 5 (0x5, controlENQ) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6 (0x6, controlACK) not available in font AlexBrush-Regular
+Aug 06, 2021 12:30:12 AM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Many requested glyphs are not available in font AlexBrush-Regular

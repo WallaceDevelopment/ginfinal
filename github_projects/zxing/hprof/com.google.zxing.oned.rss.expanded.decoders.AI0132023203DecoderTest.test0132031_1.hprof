@@ -1,0 +1,2457 @@
+JAVA PROFILE 1.0.1, created Mon Aug 16 21:26:15 2021
+
+Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+  - Neither the name of Oracle nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Header for -agentlib:hprof (or -Xrunhprof) ASCII Output (JDK 5.0 JVMTI based)
+
+WARNING!  This file format is under development, and is subject to
+change without notice.
+
+This file contains the following types of records:
+
+THREAD START
+THREAD END      mark the lifetime of Java threads
+
+TRACE           represents a Java stack trace.  Each trace consists
+                of a series of stack frames.  Other records refer to
+                TRACEs to identify (1) where object allocations have
+                taken place, (2) the frames in which GC roots were
+                found, and (3) frequently executed methods.
+
+HEAP DUMP       is a complete snapshot of all live objects in the Java
+                heap.  Following distinctions are made:
+
+                ROOT    root set as determined by GC
+                CLS     classes 
+                OBJ     instances
+                ARR     arrays
+
+SITES           is a sorted list of allocation sites.  This identifies
+                the most heavily allocated object types, and the TRACE
+                at which those allocations occurred.
+
+CPU SAMPLES     is a statistical profile of program execution.  The VM
+                periodically samples all running threads, and assigns
+                a quantum to active TRACEs in those threads.  Entries
+                in this record are TRACEs ranked by the percentage of
+                total quanta they consumed; top-ranked TRACEs are
+                typically hot spots in the program.
+
+CPU TIME        is a profile of program execution obtained by measuring
+                the time spent in individual methods (excluding the time
+                spent in callees), as well as by counting the number of
+                times each method is called. Entries in this record are
+                TRACEs ranked by the percentage of total CPU time. The
+                "count" field indicates the number of times each TRACE 
+                is invoked.
+
+MONITOR TIME    is a profile of monitor contention obtained by measuring
+                the time spent by a thread waiting to enter a monitor.
+                Entries in this record are TRACEs ranked by the percentage
+                of total monitor contention time and a brief description
+                of the monitor.  The "count" field indicates the number of 
+                times the monitor was contended at that TRACE.
+
+MONITOR DUMP    is a complete snapshot of all the monitors and threads in 
+                the System.
+
+HEAP DUMP, SITES, CPU SAMPLES|TIME and MONITOR DUMP|TIME records are generated 
+at program exit.  They can also be obtained during program execution by typing 
+Ctrl-\ (on Solaris) or by typing Ctrl-Break (on Win32).
+
+--------
+
+THREAD START (obj=50000180, id = 200002, name="HPROF gc_finish watcher", group="system")
+THREAD START (obj=50000180, id = 200001, name="main", group="main")
+THREAD START (obj=500005ba, id = 200003, name="surefire-forkedjvm-command-thread", group="main")
+THREAD END (id = 200003)
+THREAD START (obj=500005ba, id = 200004, name="surefire-forkedjvm-last-ditch-daemon-shutdown-thread-30s", group="main")
+THREAD START (obj=5000057b, id = 200005, name="Thread-0", group="main")
+THREAD END (id = 200005)
+THREAD END (id = 200001)
+TRACE 300000:
+	<empty>
+TRACE 300001:
+	java.lang.Thread.<init>(Thread.java:534)
+TRACE 300002:
+	java.lang.Thread.<init>(Thread.java:234)
+TRACE 300003:
+	java.lang.invoke.MethodHandle.<clinit>(MethodHandle.java:422)
+TRACE 300004:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:53)
+TRACE 300005:
+	java.lang.Number.<init>(Number.java:55)
+TRACE 300006:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:54)
+TRACE 300007:
+	java.lang.invoke.MethodHandleImpl$1.<init>(MethodHandleImpl.java:54)
+TRACE 300008:
+	java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:67)
+TRACE 300009:
+	java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:68)
+TRACE 300010:
+	java.util.Arrays.copyOf(Arrays.java:3332)
+TRACE 300011:
+	java.lang.String.<init>(String.java:190)
+TRACE 300012:
+	java.util.Arrays.copyOfRange(Arrays.java:3664)
+TRACE 300013:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:775)
+TRACE 300014:
+	java.lang.invoke.MethodHandleImpl$2.<init>(MethodHandleImpl.java:775)
+TRACE 300015:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:785)
+TRACE 300016:
+	java.lang.invoke.MethodHandleImpl$3.<init>(MethodHandleImpl.java:785)
+TRACE 300017:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:1083)
+TRACE 300018:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:1393)
+TRACE 300019:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:1551)
+TRACE 300020:
+	java.lang.invoke.MethodHandleImpl.<clinit>(MethodHandleImpl.java:1596)
+TRACE 300021:
+	java.lang.ClassValue.<clinit>(ClassValue.java:199)
+TRACE 300022:
+	java.lang.ClassValue.<clinit>(ClassValue.java:199)
+TRACE 300023:
+	java.lang.ClassValue.<clinit>(ClassValue.java:374)
+TRACE 300024:
+	java.lang.ClassValue.<init>(ClassValue.java:52)
+TRACE 300025:
+	java.lang.ClassValue.<init>(ClassValue.java:273)
+TRACE 300026:
+	java.lang.ClassValue$Identity.<init>(ClassValue.java:265)
+TRACE 300027:
+	java.lang.ClassValue.<init>(ClassValue.java:302)
+TRACE 300028:
+	java.lang.ClassValue$Version.<init>(ClassValue.java:308)
+TRACE 300029:
+	java.lang.ref.Reference.<init>(Reference.java:306)
+TRACE 300030:
+	java.lang.invoke.MethodHandleImpl.initStatics(MethodHandleImpl.java:68)
+TRACE 300031:
+	java.lang.invoke.MemberName$Factory.<init>(MemberName.java:887)
+TRACE 300032:
+	java.lang.invoke.MethodHandle.<clinit>(MethodHandle.java:1451)
+TRACE 300033:
+	java.lang.invoke.MethodHandleStatics.<clinit>(MethodHandleStatics.java:55)
+TRACE 300034:
+	java.lang.invoke.MethodHandleStatics.<clinit>(MethodHandleStatics.java:56)
+TRACE 300035:
+	java.lang.invoke.MethodHandleStatics$1.<init>(MethodHandleStatics.java:56)
+TRACE 300036:
+	java.lang.Class$ReflectionData.<init>(Class.java:2479)
+TRACE 300037:
+	java.lang.reflect.AccessibleObject.<init>(AccessibleObject.java:159)
+TRACE 300038:
+	sun.misc.PostVMInitHook.getConfigFilePrivileged(PostVMInitHook.java:52)
+TRACE 300039:
+	java.lang.String.toLowerCase(String.java:2590)
+TRACE 300040:
+	sun.misc.PostVMInitHook.getConfigFilePrivileged(PostVMInitHook.java:60)
+TRACE 300041:
+	sun.misc.PostVMInitHook$1.<init>(PostVMInitHook.java:60)
+TRACE 300042:
+	java.io.File.<init>(File.java:275)
+TRACE 300043:
+	java.lang.StringCoding$StringEncoder.encode(StringCoding.java:300)
+TRACE 300044:
+	java.util.Arrays.copyOf(Arrays.java:3236)
+TRACE 300045:
+	sun.misc.PostVMInitHook.trackJavaUsage(PostVMInitHook.java:37)
+TRACE 300046:
+	sun.usagetracker.UsageTrackerClient.<clinit>(UsageTrackerClient.java:98)
+TRACE 300047:
+	sun.usagetracker.UsageTrackerClient.<clinit>(UsageTrackerClient.java:131)
+TRACE 300048:
+	java.util.concurrent.atomic.AtomicBoolean.<init>(AtomicBoolean.java:70)
+TRACE 300049:
+	sun.usagetracker.UsageTrackerClient.getPropertyPrivileged(UsageTrackerClient.java:164)
+TRACE 300050:
+	sun.usagetracker.UsageTrackerClient$1.<init>(UsageTrackerClient.java:164)
+TRACE 300051:
+	sun.usagetracker.UsageTrackerClient.<init>(UsageTrackerClient.java:349)
+TRACE 300052:
+	sun.usagetracker.UsageTrackerClient.run(UsageTrackerClient.java:376)
+TRACE 300053:
+	sun.usagetracker.UsageTrackerClient$4.<init>(UsageTrackerClient.java:376)
+TRACE 300054:
+	sun.usagetracker.UsageTrackerClient.getConfigFilePrivileged(UsageTrackerClient.java:204)
+TRACE 300055:
+	sun.usagetracker.UsageTrackerClient.getConfigFilePrivileged(UsageTrackerClient.java:212)
+TRACE 300056:
+	sun.usagetracker.UsageTrackerClient$3.<init>(UsageTrackerClient.java:212)
+TRACE 300057:
+	java.io.ExpiringCache$Entry.<init>(ExpiringCache.java:48)
+TRACE 300058:
+	java.util.HashMap$Node.<init>(HashMap.java:285)
+TRACE 300059:
+	java.lang.Long.toUnsignedString0(Long.java:356)
+TRACE 300060:
+	java.lang.String.<init>(String.java:609)
+TRACE 300061:
+	java.io.File.<init>(File.java:315)
+TRACE 300062:
+	java.io.OutputStream.<init>(OutputStream.java:46)
+TRACE 300063:
+	java.io.FileOutputStream.<init>(FileOutputStream.java:76)
+TRACE 300064:
+	java.io.FileDescriptor.<init>(FileDescriptor.java:58)
+TRACE 300065:
+	java.io.FileOutputStream.close(FileOutputStream.java:354)
+TRACE 300066:
+	java.io.FileOutputStream$1.<init>(FileOutputStream.java:354)
+TRACE 300067:
+	java.lang.Enum.<init>(Enum.java:117)
+TRACE 300068:
+	sun.launcher.LauncherHelper.<clinit>(LauncherHelper.java:72)
+TRACE 300069:
+	java.lang.String.<init>(String.java:422)
+TRACE 300070:
+	java.lang.StringCoding$StringDecoder.decode(StringCoding.java:149)
+TRACE 300071:
+	sun.launcher.LauncherHelper.getMainClassFromJar(LauncherHelper.java:507)
+TRACE 300072:
+	java.util.zip.ZipFile.<clinit>(ZipFile.java:798)
+TRACE 300073:
+	java.util.zip.ZipFile$1.<init>(ZipFile.java:799)
+TRACE 300074:
+	java.lang.ThreadLocal.<init>(ThreadLocal.java:148)
+TRACE 300075:
+	java.util.jar.JarFile.<clinit>(JarFile.java:86)
+TRACE 300076:
+	java.util.jar.JavaUtilJarAccessImpl.<init>(JavaUtilJarAccessImpl.java:35)
+TRACE 300077:
+	java.util.jar.JarFile.<clinit>(JarFile.java:470)
+TRACE 300078:
+	java.util.jar.JarFile.<clinit>(JarFile.java:477)
+TRACE 300079:
+	java.util.jar.JarFile.<clinit>(JarFile.java:478)
+TRACE 300080:
+	java.util.zip.ZipFile.<init>(ZipFile.java:155)
+TRACE 300081:
+	sun.nio.cs.FastCharsetProvider.toLower(FastCharsetProvider.java:85)
+TRACE 300082:
+	java.lang.String.<init>(String.java:165)
+TRACE 300083:
+	sun.nio.cs.FastCharsetProvider.lookup(FastCharsetProvider.java:111)
+TRACE 300084:
+	java.nio.charset.Charset.<init>(Charset.java:639)
+TRACE 300085:
+	java.nio.charset.Charset.cache(Charset.java:330)
+TRACE 300086:
+	java.lang.Class.forName0(Class.java:Unknown line)
+TRACE 300087:
+	java.lang.Class.newInstance(Class.java:411)
+TRACE 300088:
+	java.lang.Class$1.<init>(Class.java:418)
+TRACE 300089:
+	sun.reflect.MagicAccessorImpl.<init>(MagicAccessorImpl.java:46)
+TRACE 300090:
+	java.util.zip.ZipFile.<init>(ZipFile.java:207)
+TRACE 300091:
+	java.util.AbstractMap.<init>(AbstractMap.java:73)
+TRACE 300092:
+	java.lang.ref.ReferenceQueue.<init>(ReferenceQueue.java:43)
+TRACE 300093:
+	java.lang.ref.ReferenceQueue$Lock.<init>(ReferenceQueue.java:54)
+TRACE 300094:
+	java.util.WeakHashMap.newTable(WeakHashMap.java:195)
+TRACE 300095:
+	java.util.zip.ZipFile.<init>(ZipFile.java:485)
+TRACE 300096:
+	java.util.AbstractCollection.<init>(AbstractCollection.java:66)
+TRACE 300097:
+	java.util.ArrayDeque.<init>(ArrayDeque.java:193)
+TRACE 300098:
+	java.util.zip.ZipFile.<init>(ZipFile.java:223)
+TRACE 300099:
+	java.util.zip.ZipCoder.<init>(ZipCoder.java:133)
+TRACE 300100:
+	java.util.zip.ZipFile.<init>(ZipFile.java:226)
+TRACE 300101:
+	sun.misc.PerfCounter.<clinit>(PerfCounter.java:51)
+TRACE 300102:
+	sun.misc.Perf$GetPerfAction.<init>(Perf.java:89)
+TRACE 300103:
+	sun.misc.Perf$GetPerfAction.run(Perf.java:97)
+TRACE 300104:
+	sun.misc.Perf.<init>(Perf.java:59)
+TRACE 300105:
+	sun.misc.PerfCounter.getZipFileOpenTime(PerfCounter.java:182)
+TRACE 300106:
+	sun.misc.PerfCounter.<init>(PerfCounter.java:63)
+TRACE 300107:
+	sun.misc.Perf.createLong(Perf.java:Unknown line)
+TRACE 300108:
+	sun.security.action.GetPropertyAction.<init>(GetPropertyAction.java:62)
+TRACE 300109:
+	java.nio.Buffer.<init>(Buffer.java:197)
+TRACE 300110:
+	java.nio.DirectByteBuffer.asLongBuffer(DirectByteBuffer.java:832)
+TRACE 300111:
+	java.nio.charset.CharsetEncoder.<init>(CharsetEncoder.java:233)
+TRACE 300112:
+	java.nio.charset.CharsetEncoder.<init>(CharsetEncoder.java:190)
+TRACE 300113:
+	java.lang.String.toCharArray(String.java:2899)
+TRACE 300114:
+	java.util.zip.ZipCoder.getBytes(ZipCoder.java:80)
+TRACE 300115:
+	java.util.zip.ZipFile.getZipEntry(ZipFile.java:572)
+TRACE 300116:
+	java.util.zip.ZipEntry.<init>(ZipEntry.java:136)
+TRACE 300117:
+	java.nio.charset.CharsetDecoder.<init>(CharsetDecoder.java:190)
+TRACE 300118:
+	java.util.zip.ZipCoder.toString(ZipCoder.java:49)
+TRACE 300119:
+	java.util.jar.JarFile.getEntry(JarFile.java:243)
+TRACE 300120:
+	java.util.zip.ZipEntry.<init>(ZipEntry.java:117)
+TRACE 300121:
+	java.util.zip.ZipFile.getInputStream(ZipFile.java:375)
+TRACE 300122:
+	java.io.InputStream.<init>(InputStream.java:45)
+TRACE 300123:
+	java.util.zip.ZipFile.getInflater(ZipFile.java:469)
+TRACE 300124:
+	java.util.zip.Inflater.<clinit>(Inflater.java:84)
+TRACE 300125:
+	java.util.zip.Inflater.<init>(Inflater.java:102)
+TRACE 300126:
+	java.util.zip.Inflater.<init>(Inflater.java:103)
+TRACE 300127:
+	java.util.zip.ZStreamRef.<init>(ZStreamRef.java:35)
+TRACE 300128:
+	java.util.zip.ZipFile.getInputStream(ZipFile.java:389)
+TRACE 300129:
+	java.util.zip.InflaterInputStream.<init>(InflaterInputStream.java:112)
+TRACE 300130:
+	java.util.zip.InflaterInputStream.<init>(InflaterInputStream.java:187)
+TRACE 300131:
+	java.util.zip.InflaterInputStream.<init>(InflaterInputStream.java:88)
+TRACE 300132:
+	java.util.jar.JarFile.getBytes(JarFile.java:426)
+TRACE 300133:
+	sun.misc.IOUtils.readFully(IOUtils.java:150)
+TRACE 300134:
+	java.util.jar.JarFile.getManifestFromReference(JarFile.java:196)
+TRACE 300135:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:96)
+TRACE 300136:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:91)
+TRACE 300137:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:551)
+TRACE 300138:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:551)
+TRACE 300139:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:783)
+TRACE 300140:
+	java.util.jar.JarVerifier$3.<init>(JarVerifier.java:783)
+TRACE 300141:
+	java.util.Dictionary.<init>(Dictionary.java:55)
+TRACE 300142:
+	java.util.Hashtable.<init>(Hashtable.java:191)
+TRACE 300143:
+	java.util.jar.JarVerifier.<init>(JarVerifier.java:102)
+TRACE 300144:
+	java.io.ByteArrayOutputStream.<init>(ByteArrayOutputStream.java:77)
+TRACE 300145:
+	java.util.jar.Manifest.<init>(Manifest.java:80)
+TRACE 300146:
+	java.util.jar.Manifest.<init>(Manifest.java:51)
+TRACE 300147:
+	java.util.jar.Attributes.<init>(Attributes.java:73)
+TRACE 300148:
+	java.util.jar.Manifest.read(Manifest.java:230)
+TRACE 300149:
+	java.util.jar.Manifest$FastInputStream.<init>(Manifest.java:367)
+TRACE 300150:
+	java.util.jar.Manifest.read(Manifest.java:232)
+TRACE 300151:
+	java.lang.String.<init>(String.java:323)
+TRACE 300152:
+	java.lang.String.<init>(String.java:325)
+TRACE 300153:
+	java.util.jar.Attributes.putValue(Attributes.java:168)
+TRACE 300154:
+	java.util.jar.Attributes$Name.<init>(Attributes.java:459)
+TRACE 300155:
+	java.util.jar.Attributes$Name.hashCode(Attributes.java:514)
+TRACE 300156:
+	sun.misc.ASCIICaseInsensitiveComparator.<init>(ASCIICaseInsensitiveComparator.java:36)
+TRACE 300157:
+	java.util.HashMap.resize(HashMap.java:704)
+TRACE 300158:
+	java.util.jar.Attributes.read(Attributes.java:414)
+TRACE 300159:
+	java.util.jar.Attributes.read(Attributes.java:394)
+TRACE 300160:
+	java.lang.ClassLoader.getClassLoadingLock(ClassLoader.java:456)
+TRACE 300161:
+	java.util.concurrent.ConcurrentHashMap.initTable(ConcurrentHashMap.java:2233)
+TRACE 300162:
+	java.util.concurrent.ConcurrentHashMap$Node.<init>(ConcurrentHashMap.java:625)
+TRACE 300163:
+	java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+TRACE 300164:
+	java.net.URLClassLoader$1.<init>(URLClassLoader.java:363)
+TRACE 300165:
+	java.lang.String.replace(String.java:2078)
+TRACE 300166:
+	sun.misc.URLClassPath.getLoader(URLClassPath.java:522)
+TRACE 300167:
+	sun.misc.URLClassPath.getLoader(URLClassPath.java:564)
+TRACE 300168:
+	sun.misc.URLClassPath$3.<init>(URLClassPath.java:565)
+TRACE 300169:
+	sun.misc.URLClassPath$3.run(URLClassPath.java:575)
+TRACE 300170:
+	java.lang.StringBuffer.<clinit>(StringBuffer.java:685)
+TRACE 300171:
+	java.io.ObjectStreamField.<init>(ObjectStreamField.java:87)
+TRACE 300172:
+	java.net.URL.<init>(URL.java:377)
+TRACE 300173:
+	java.net.Parts.<init>(URL.java:1483)
+TRACE 300174:
+	sun.misc.URLClassPath$Loader.<init>(URLClassPath.java:687)
+TRACE 300175:
+	java.util.Arrays.copyOf(Arrays.java:3210)
+TRACE 300176:
+	java.lang.Throwable.<init>(Throwable.java:287)
+TRACE 300177:
+	sun.misc.URLClassPath$JarLoader.ensureOpen(URLClassPath.java:880)
+TRACE 300178:
+	sun.misc.URLClassPath$JarLoader$1.<init>(URLClassPath.java:881)
+TRACE 300179:
+	sun.misc.URLClassPath$JarLoader.getJarFile(URLClassPath.java:938)
+TRACE 300180:
+	sun.misc.FileURLMapper.<init>(FileURLMapper.java:48)
+TRACE 300181:
+	sun.misc.URLClassPath$JarLoader$1.run(URLClassPath.java:889)
+TRACE 300182:
+	sun.misc.URLClassPath$JarLoader.parseExtensionsDependencies(URLClassPath.java:1219)
+TRACE 300183:
+	java.util.jar.JarFile.isKnownNotToHaveSpecialAttributes(JarFile.java:576)
+TRACE 300184:
+	java.util.StringTokenizer.<init>(StringTokenizer.java:194)
+TRACE 300185:
+	sun.misc.URLClassPath$JarLoader.parseClassPath(URLClassPath.java:1230)
+TRACE 300186:
+	java.net.URL.<init>(URL.java:532)
+TRACE 300187:
+	sun.net.www.ParseUtil.encodePath(ParseUtil.java:105)
+TRACE 300188:
+	sun.net.www.ParseUtil.<init>(ParseUtil.java:48)
+TRACE 300189:
+	sun.misc.URLClassPath$JarLoader.checkResource(URLClassPath.java:984)
+TRACE 300190:
+	sun.misc.Resource.<init>(Resource.java:46)
+TRACE 300191:
+	java.lang.String.toUpperCase(String.java:2753)
+TRACE 300192:
+	java.lang.ClassLoader.getPackage(ClassLoader.java:1618)
+TRACE 300193:
+	java.lang.Package.<init>(Package.java:459)
+TRACE 300194:
+	sun.misc.Resource.getByteBuffer(Resource.java:161)
+TRACE 300195:
+	sun.misc.Resource.getBytes(Resource.java:109)
+TRACE 300196:
+	java.security.CodeSource.<init>(CodeSource.java:104)
+TRACE 300197:
+	java.security.SecureClassLoader.getPermissions(SecureClassLoader.java:192)
+TRACE 300198:
+	java.security.Permissions.<clinit>(Permissions.java:346)
+TRACE 300199:
+	java.security.PermissionCollection.<init>(PermissionCollection.java:94)
+TRACE 300200:
+	sun.net.www.protocol.file.Handler.createFileURLConnection(Handler.java:112)
+TRACE 300201:
+	java.net.URLConnection.<init>(URLConnection.java:456)
+TRACE 300202:
+	sun.net.www.URLConnection.<init>(URLConnection.java:53)
+TRACE 300203:
+	sun.net.www.MessageHeader.<init>(MessageHeader.java:49)
+TRACE 300204:
+	sun.net.www.MessageHeader.grow(MessageHeader.java:377)
+TRACE 300205:
+	sun.net.www.MessageHeader.grow(MessageHeader.java:378)
+TRACE 300206:
+	sun.net.www.protocol.file.FileURLConnection.getPermission(FileURLConnection.java:225)
+TRACE 300207:
+	java.security.Permission.<init>(Permission.java:78)
+TRACE 300208:
+	java.io.FilePermission.init(FilePermission.java:212)
+TRACE 300209:
+	java.io.FilePermission$1.<init>(FilePermission.java:212)
+TRACE 300210:
+	java.io.FilePermission.newPermissionCollection(FilePermission.java:680)
+TRACE 300211:
+	java.io.FilePermissionCollection.<clinit>(FilePermission.java:834)
+TRACE 300212:
+	java.security.Permissions.add(Permissions.java:137)
+TRACE 300213:
+	java.security.Permissions.add(Permissions.java:140)
+TRACE 300214:
+	java.security.BasicPermission.newPermissionCollection(BasicPermission.java:252)
+TRACE 300215:
+	java.security.BasicPermissionCollection.<clinit>(BasicPermission.java:485)
+TRACE 300216:
+	java.security.ProtectionDomain.<init>(ProtectionDomain.java:184)
+TRACE 300217:
+	java.security.ProtectionDomain$Key.<init>(ProtectionDomain.java:457)
+TRACE 300218:
+	java.security.ProtectionDomain.<init>(ProtectionDomain.java:195)
+TRACE 300219:
+	java.lang.ClassLoader.defineClass1(ClassLoader.java:Unknown line)
+TRACE 300220:
+	sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:625)
+TRACE 300221:
+	sun.launcher.LauncherHelper.validateMainClass(LauncherHelper.java:650)
+TRACE 300222:
+	java.lang.Class.getMethod0(Class.java:3017)
+TRACE 300223:
+	java.lang.Class$MethodArray.<init>(Class.java:2722)
+TRACE 300224:
+	java.lang.Class$MethodArray.<init>(Class.java:2726)
+TRACE 300225:
+	java.lang.ClassLoader.findBootstrapClass(ClassLoader.java:Unknown line)
+TRACE 300226:
+	java.util.concurrent.ConcurrentHashMap.transfer(ConcurrentHashMap.java:2374)
+TRACE 300227:
+	java.util.concurrent.ConcurrentHashMap.transfer(ConcurrentHashMap.java:2384)
+TRACE 300228:
+	sun.launcher.LauncherHelper.validateMainClass(LauncherHelper.java:668)
+TRACE 300229:
+	org.apache.maven.surefire.booter.ForkedBooter.<init>(ForkedBooter.java:82)
+TRACE 300230:
+	java.util.concurrent.Semaphore.<init>(Semaphore.java:264)
+TRACE 300231:
+	java.util.concurrent.Semaphore.<init>(Semaphore.java:265)
+TRACE 300232:
+	java.lang.Class.getDeclaredFields0(Class.java:Unknown line)
+TRACE 300233:
+	java.util.concurrent.locks.AbstractOwnableSynchronizer.<init>(AbstractOwnableSynchronizer.java:59)
+TRACE 300234:
+	java.io.FileInputStream.<init>(FileInputStream.java:62)
+TRACE 300235:
+	org.apache.maven.surefire.booter.BooterDeserializer.<init>(BooterDeserializer.java:61)
+TRACE 300236:
+	java.util.Properties.load(Properties.java:341)
+TRACE 300237:
+	java.util.Properties$LineReader.<init>(Properties.java:403)
+TRACE 300238:
+	java.util.Properties$LineReader.<init>(Properties.java:415)
+TRACE 300239:
+	java.util.Properties$LineReader.<init>(Properties.java:405)
+TRACE 300240:
+	java.util.Properties.load0(Properties.java:345)
+TRACE 300241:
+	java.util.Hashtable$Entry.<init>(Hashtable.java:1261)
+TRACE 300242:
+	java.util.Hashtable.rehash(Hashtable.java:402)
+TRACE 300243:
+	java.util.Hashtable$Enumerator.<init>(Hashtable.java:1343)
+TRACE 300244:
+	java.util.Hashtable.keySet(Hashtable.java:642)
+TRACE 300245:
+	java.util.Collections$SynchronizedCollection.<init>(Collections.java:2011)
+TRACE 300246:
+	org.apache.maven.surefire.booter.PropertiesWrapper.<init>(PropertiesWrapper.java:37)
+TRACE 300247:
+	java.io.FileInputStream$1.<init>(FileInputStream.java:334)
+TRACE 300248:
+	java.util.concurrent.ConcurrentHashMap$CollectionView.<init>(ConcurrentHashMap.java:4377)
+TRACE 300249:
+	java.util.concurrent.ConcurrentHashMap$EntrySetView.iterator(ConcurrentHashMap.java:4746)
+TRACE 300250:
+	java.util.concurrent.ConcurrentHashMap$Traverser.<init>(ConcurrentHashMap.java:3301)
+TRACE 300251:
+	java.util.concurrent.ConcurrentHashMap$EntryIterator.next(ConcurrentHashMap.java:3461)
+TRACE 300252:
+	java.util.concurrent.ConcurrentHashMap$MapEntry.<init>(ConcurrentHashMap.java:3472)
+TRACE 300253:
+	org.apache.maven.surefire.booter.TypeEncodedValue.<init>(TypeEncodedValue.java:40)
+TRACE 300254:
+	org.apache.maven.surefire.api.util.RunOrder.<init>(RunOrder.java:132)
+TRACE 300255:
+	org.apache.maven.surefire.api.util.RunOrder.<clinit>(RunOrder.java:47)
+TRACE 300256:
+	org.apache.maven.surefire.api.util.RunOrder.values(RunOrder.java:111)
+TRACE 300257:
+	org.apache.maven.surefire.api.util.RunOrder.valueOfMulti(RunOrder.java:66)
+TRACE 300258:
+	org.apache.maven.surefire.api.testset.DirectoryScannerParameters.<init>(DirectoryScannerParameters.java:48)
+TRACE 300259:
+	org.apache.maven.surefire.api.testset.RunOrderParameters.<init>(RunOrderParameters.java:41)
+TRACE 300260:
+	org.apache.maven.surefire.api.testset.TestArtifactInfo.<init>(TestArtifactInfo.java:34)
+TRACE 300261:
+	java.util.Collections.singleton(Collections.java:4669)
+TRACE 300262:
+	org.apache.maven.surefire.api.testset.TestListResolver.<init>(TestListResolver.java:65)
+TRACE 300263:
+	org.apache.maven.surefire.api.testset.IncludedExcludedPatterns.<init>(IncludedExcludedPatterns.java:22)
+TRACE 300264:
+	java.util.HashSet.<clinit>(HashSet.java:99)
+TRACE 300265:
+	java.util.Collections.singletonIterator(Collections.java:4673)
+TRACE 300266:
+	java.util.Collections$1.<init>(Collections.java:4673)
+TRACE 300267:
+	org.apache.maven.surefire.shared.utils.StringUtils.split(StringUtils.java:568)
+TRACE 300268:
+	org.apache.maven.surefire.api.testset.ResolvedTest$Type.<clinit>(ResolvedTest.java:46)
+TRACE 300269:
+	org.apache.maven.surefire.api.testset.ResolvedTest.<init>(ResolvedTest.java:114)
+TRACE 300270:
+	org.apache.maven.surefire.api.testset.ResolvedTest$ClassMatcher.<init>(ResolvedTest.java:379)
+TRACE 300271:
+	org.apache.maven.surefire.api.testset.ResolvedTest$MethodMatcher.<init>(ResolvedTest.java:435)
+TRACE 300272:
+	java.util.Collections.unmodifiableSet(Collections.java:1120)
+TRACE 300273:
+	java.util.Collections$UnmodifiableCollection.<init>(Collections.java:1026)
+TRACE 300274:
+	org.apache.maven.surefire.api.testset.ResolvedTest.<init>(ResolvedTest.java:84)
+TRACE 300275:
+	org.apache.maven.surefire.api.testset.TestRequest.<init>(TestRequest.java:48)
+TRACE 300276:
+	java.util.ArrayList.iterator(ArrayList.java:842)
+TRACE 300277:
+	java.util.ArrayList$Itr.<init>(ArrayList.java:853)
+TRACE 300278:
+	org.apache.maven.surefire.api.report.ReporterConfiguration.<init>(ReporterConfiguration.java:44)
+TRACE 300279:
+	org.apache.maven.surefire.api.booter.Shutdown.<clinit>(Shutdown.java:29)
+TRACE 300280:
+	java.lang.Class.getEnumConstantsShared(Class.java:3311)
+TRACE 300281:
+	java.lang.Class.getEnumConstantsShared(Class.java:3312)
+TRACE 300282:
+	java.lang.Class$4.<init>(Class.java:3313)
+TRACE 300283:
+	java.lang.Class.getEnumConstantsShared(Class.java:3320)
+TRACE 300284:
+	sun.reflect.ReflectionFactory.newMethodAccessor(ReflectionFactory.java:171)
+TRACE 300285:
+	sun.reflect.ReflectionFactory.newMethodAccessor(ReflectionFactory.java:173)
+TRACE 300286:
+	org.apache.maven.surefire.api.cli.CommandLineOption.<clinit>(CommandLineOption.java:33)
+TRACE 300287:
+	java.util.ArrayList.<init>(ArrayList.java:153)
+TRACE 300288:
+	org.apache.maven.surefire.booter.ProviderConfiguration.<init>(ProviderConfiguration.java:79)
+TRACE 300289:
+	org.apache.maven.surefire.api.booter.DumpErrorSingleton.<init>(DumpErrorSingleton.java:45)
+TRACE 300290:
+	java.io.File.<init>(File.java:358)
+TRACE 300291:
+	java.lang.management.ManagementFactory.getRuntimeMXBean(ManagementFactory.java:350)
+TRACE 300292:
+	sun.management.ManagementFactoryHelper.<clinit>(ManagementFactoryHelper.java:448)
+TRACE 300293:
+	sun.management.ManagementFactoryHelper$4.<init>(ManagementFactoryHelper.java:449)
+TRACE 300294:
+	java.lang.ClassLoader$3.<init>(ClassLoader.java:1871)
+TRACE 300295:
+	java.lang.ClassLoader$NativeLibrary.<init>(ClassLoader.java:1724)
+TRACE 300296:
+	sun.management.ManagementFactoryHelper.<clinit>(ManagementFactoryHelper.java:455)
+TRACE 300297:
+	sun.management.VMManagementImpl.<init>(VMManagementImpl.java:47)
+TRACE 300298:
+	sun.management.ManagementFactoryHelper.getRuntimeMXBean(ManagementFactoryHelper.java:92)
+TRACE 300299:
+	sun.management.RuntimeImpl.<init>(RuntimeImpl.java:53)
+TRACE 300300:
+	sun.management.RuntimeImpl.getInputArguments(RuntimeImpl.java:108)
+TRACE 300301:
+	sun.management.Util.<clinit>(Util.java:41)
+TRACE 300302:
+	sun.management.Util.<clinit>(Util.java:58)
+TRACE 300303:
+	java.util.Arrays.asList(Arrays.java:3800)
+TRACE 300304:
+	java.util.Collections$UnmodifiableCollection.iterator(Collections.java:1040)
+TRACE 300305:
+	java.util.Collections$UnmodifiableCollection$1.<init>(Collections.java:1040)
+TRACE 300306:
+	java.util.AbstractList.iterator(AbstractList.java:288)
+TRACE 300307:
+	java.util.AbstractList$Itr.<init>(AbstractList.java:330)
+TRACE 300308:
+	org.apache.maven.surefire.booter.ClassLoaderConfiguration.<init>(ClassLoaderConfiguration.java:36)
+TRACE 300309:
+	org.apache.maven.surefire.booter.Classpath.<init>(Classpath.java:79)
+TRACE 300310:
+	org.apache.maven.surefire.booter.Classpath.<init>(Classpath.java:67)
+TRACE 300311:
+	org.apache.maven.surefire.booter.AbstractPathConfiguration.<init>(AbstractPathConfiguration.java:53)
+TRACE 300312:
+	org.apache.maven.surefire.booter.ProcessCheckerType.<clinit>(ProcessCheckerType.java:27)
+TRACE 300313:
+	org.apache.maven.surefire.booter.StartupConfiguration.<init>(StartupConfiguration.java:46)
+TRACE 300314:
+	java.util.ServiceLoader.<init>(ServiceLoader.java:222)
+TRACE 300315:
+	java.util.ServiceLoader.reload(ServiceLoader.java:219)
+TRACE 300316:
+	java.util.ServiceLoader$LazyIterator.<init>(ServiceLoader.java:333)
+TRACE 300317:
+	java.util.ServiceLoader.iterator(ServiceLoader.java:466)
+TRACE 300318:
+	java.util.ServiceLoader$1.<init>(ServiceLoader.java:466)
+TRACE 300319:
+	java.util.LinkedHashMap.entrySet(LinkedHashMap.java:635)
+TRACE 300320:
+	java.util.LinkedHashMap$LinkedEntrySet.iterator(LinkedHashMap.java:642)
+TRACE 300321:
+	java.util.LinkedHashMap$LinkedHashIterator.<init>(LinkedHashMap.java:706)
+TRACE 300322:
+	java.lang.ClassLoader.getResources(ClassLoader.java:1129)
+TRACE 300323:
+	sun.misc.Launcher.getBootstrapClassPath(Launcher.java:441)
+TRACE 300324:
+	sun.misc.Launcher$BootClassPathHolder.<clinit>(Launcher.java:411)
+TRACE 300325:
+	sun.misc.Launcher$BootClassPathHolder$1.<init>(Launcher.java:412)
+TRACE 300326:
+	sun.misc.Launcher.getClassPath(Launcher.java:466)
+TRACE 300327:
+	java.io.File.<init>(File.java:249)
+TRACE 300328:
+	java.io.Reader.<init>(Reader.java:76)
+TRACE 300329:
+	java.nio.HeapByteBuffer.<init>(HeapByteBuffer.java:57)
+TRACE 300330:
+	java.io.BufferedReader.<init>(BufferedReader.java:105)
+TRACE 300331:
+	sun.misc.MetaIndex.<init>(MetaIndex.java:254)
+TRACE 300332:
+	sun.misc.MetaIndex.<init>(MetaIndex.java:259)
+TRACE 300333:
+	sun.misc.Launcher.pathToURLs(Launcher.java:445)
+TRACE 300334:
+	sun.misc.URLClassPath.<init>(URLClassPath.java:136)
+TRACE 300335:
+	java.util.Vector.<init>(Vector.java:138)
+TRACE 300336:
+	java.net.URLStreamHandler.<init>(URLStreamHandler.java:52)
+TRACE 300337:
+	sun.misc.URLClassPath.getResources(URLClassPath.java:314)
+TRACE 300338:
+	sun.misc.URLClassPath$2.<init>(URLClassPath.java:314)
+TRACE 300339:
+	java.lang.ClassLoader.getBootstrapResources(ClassLoader.java:1269)
+TRACE 300340:
+	java.lang.ClassLoader$2.<init>(ClassLoader.java:1269)
+TRACE 300341:
+	sun.misc.URLClassPath.findResources(URLClassPath.java:266)
+TRACE 300342:
+	sun.misc.URLClassPath$1.<init>(URLClassPath.java:266)
+TRACE 300343:
+	java.net.URLClassLoader.findResources(URLClassLoader.java:593)
+TRACE 300344:
+	java.net.URLClassLoader$3.<init>(URLClassLoader.java:593)
+TRACE 300345:
+	java.lang.ClassLoader.getResources(ClassLoader.java:1137)
+TRACE 300346:
+	sun.misc.CompoundEnumeration.<init>(CompoundEnumeration.java:39)
+TRACE 300347:
+	sun.misc.URLClassPath$JarLoader.getJarFile(URLClassPath.java:940)
+TRACE 300348:
+	java.lang.Throwable.<init>(Throwable.java:265)
+TRACE 300349:
+	java.security.AccessController.doPrivileged(AccessController.java:Unknown line)
+TRACE 300350:
+	java.lang.Throwable.<init>(Throwable.java:310)
+TRACE 300351:
+	java.net.URLClassLoader$3.next(URLClassLoader.java:601)
+TRACE 300352:
+	java.net.URLClassLoader$3$1.<init>(URLClassLoader.java:602)
+TRACE 300353:
+	sun.net.www.protocol.jar.Handler.openConnection(Handler.java:41)
+TRACE 300354:
+	sun.net.www.protocol.jar.JarURLConnection.<clinit>(JarURLConnection.java:54)
+TRACE 300355:
+	sun.net.www.protocol.jar.JarFileFactory.<init>(JarFileFactory.java:53)
+TRACE 300356:
+	sun.net.www.protocol.jar.JarFileFactory.getOrCreate(JarFileFactory.java:94)
+TRACE 300357:
+	sun.net.www.protocol.jar.URLJarFile.getEntry(URLJarFile.java:131)
+TRACE 300358:
+	sun.net.www.protocol.jar.JarURLConnection.getInputStream(JarURLConnection.java:184)
+TRACE 300359:
+	org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelProcessorFactory.<init>(LegacyMasterProcessChannelProcessorFactory.java:38)
+TRACE 300360:
+	org.apache.maven.surefire.booter.spi.SurefireMasterProcessChannelProcessorFactory.<init>(SurefireMasterProcessChannelProcessorFactory.java:52)
+TRACE 300361:
+	sun.misc.URLClassPath$3.run(URLClassPath.java:570)
+TRACE 300362:
+	org.apache.maven.surefire.shared.codec.binary.Base64.<clinit>(Base64.java:74)
+TRACE 300363:
+	org.apache.maven.surefire.shared.codec.binary.Base64.<clinit>(Base64.java:83)
+TRACE 300364:
+	org.apache.maven.surefire.shared.codec.binary.Base64.<clinit>(Base64.java:96)
+TRACE 300365:
+	org.apache.maven.surefire.shared.codec.binary.Base64.<clinit>(Base64.java:115)
+TRACE 300366:
+	org.apache.maven.surefire.shared.codec.binary.BaseNCodec.<init>(BaseNCodec.java:205)
+TRACE 300367:
+	java.io.BufferedOutputStream.<init>(BufferedOutputStream.java:76)
+TRACE 300368:
+	org.apache.maven.surefire.api.util.internal.AbstractNoninterruptibleWritableChannel.<init>(AbstractNoninterruptibleWritableChannel.java:33)
+TRACE 300369:
+	org.apache.maven.surefire.api.report.RunMode.<clinit>(RunMode.java:35)
+TRACE 300370:
+	java.util.Collections.unmodifiableMap(Collections.java:1435)
+TRACE 300371:
+	java.util.Collections$UnmodifiableMap.<init>(Collections.java:1446)
+TRACE 300372:
+	org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelEncoder.<init>(LegacyMasterProcessChannelEncoder.java:94)
+TRACE 300373:
+	java.util.concurrent.atomic.AtomicBoolean.<init>(AtomicBoolean.java:77)
+TRACE 300374:
+	org.apache.maven.surefire.api.booter.MasterProcessCommand.<clinit>(MasterProcessCommand.java:30)
+TRACE 300375:
+	java.util.HashMap.entrySet(HashMap.java:1007)
+TRACE 300376:
+	java.util.HashMap$EntrySet.iterator(HashMap.java:1014)
+TRACE 300377:
+	java.util.HashMap$HashIterator.<init>(HashMap.java:1427)
+TRACE 300378:
+	org.apache.maven.surefire.api.util.internal.ImmutableMap$Node.<init>(ImmutableMap.java:83)
+TRACE 300379:
+	java.io.BufferedInputStream.<init>(BufferedInputStream.java:203)
+TRACE 300380:
+	org.apache.maven.surefire.api.util.internal.AbstractNoninterruptibleReadableChannel.<init>(AbstractNoninterruptibleReadableChannel.java:34)
+TRACE 300381:
+	org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelDecoder.<init>(LegacyMasterProcessChannelDecoder.java:60)
+TRACE 300382:
+	org.apache.maven.surefire.booter.ForkedBooter$8.<init>(ForkedBooter.java:500)
+TRACE 300383:
+	java.lang.Thread.<init>(Thread.java:463)
+TRACE 300384:
+	java.lang.Thread.<init>(Thread.java:234)
+TRACE 300385:
+	java.lang.Runtime.addShutdownHook(Runtime.java:211)
+TRACE 300386:
+	java.lang.ApplicationShutdownHooks.<clinit>(ApplicationShutdownHooks.java:42)
+TRACE 300387:
+	java.lang.ApplicationShutdownHooks$1.<init>(ApplicationShutdownHooks.java:44)
+TRACE 300388:
+	java.lang.ApplicationShutdownHooks.<clinit>(ApplicationShutdownHooks.java:42)
+TRACE 300389:
+	java.lang.Shutdown.<clinit>(Shutdown.java:54)
+TRACE 300390:
+	java.lang.Shutdown.<clinit>(Shutdown.java:61)
+TRACE 300391:
+	java.lang.Shutdown$Lock.<init>(Shutdown.java:60)
+TRACE 300392:
+	java.lang.ApplicationShutdownHooks.<clinit>(ApplicationShutdownHooks.java:50)
+TRACE 300393:
+	java.util.IdentityHashMap.<clinit>(IdentityHashMap.java:190)
+TRACE 300394:
+	java.util.IdentityHashMap.init(IdentityHashMap.java:255)
+TRACE 300395:
+	org.apache.maven.surefire.api.booter.ForkingReporterFactory.<init>(ForkingReporterFactory.java:40)
+TRACE 300396:
+	org.apache.maven.surefire.api.booter.ForkingRunListener.<init>(ForkingRunListener.java:60)
+TRACE 300397:
+	org.apache.maven.surefire.booter.CommandReader.<init>(CommandReader.java:90)
+TRACE 300398:
+	java.util.concurrent.ConcurrentLinkedQueue$Node.<init>(ConcurrentLinkedQueue.java:188)
+TRACE 300399:
+	org.apache.maven.surefire.booter.CommandReader$CommandRunnable.<init>(CommandReader.java:331)
+TRACE 300400:
+	java.util.concurrent.Executors.defaultThreadFactory(Executors.java:353)
+TRACE 300401:
+	java.util.concurrent.Executors$DefaultThreadFactory.<init>(Executors.java:602)
+TRACE 300402:
+	org.apache.maven.surefire.api.util.internal.DaemonThreadFactory.<init>(DaemonThreadFactory.java:41)
+TRACE 300403:
+	java.lang.Thread.<init>(Thread.java:677)
+TRACE 300404:
+	java.lang.Thread.<init>(Thread.java:234)
+TRACE 300405:
+	java.lang.Thread$State.<clinit>(Thread.java:1742)
+TRACE 300406:
+	java.util.concurrent.atomic.AtomicReference.<init>(AtomicReference.java:69)
+TRACE 300407:
+	java.util.concurrent.CountDownLatch.<init>(CountDownLatch.java:198)
+TRACE 300408:
+	java.util.concurrent.CountDownLatch.<init>(CountDownLatch.java:200)
+TRACE 300409:
+	java.util.concurrent.CopyOnWriteArrayList.<init>(CopyOnWriteArrayList.java:121)
+TRACE 300410:
+	java.util.concurrent.locks.ReentrantLock.<init>(ReentrantLock.java:256)
+TRACE 300411:
+	java.util.concurrent.locks.ReentrantLock.<init>(ReentrantLock.java:257)
+TRACE 300412:
+	java.util.concurrent.CopyOnWriteArrayList.<init>(CopyOnWriteArrayList.java:122)
+TRACE 300413:
+	org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelDecoder$FrameCompletion.<clinit>(LegacyMasterProcessChannelDecoder.java:172)
+TRACE 300414:
+	java.util.LinkedHashMap.keySet(LinkedHashMap.java:533)
+TRACE 300415:
+	java.util.LinkedHashMap$LinkedKeySet.iterator(LinkedHashMap.java:543)
+TRACE 300416:
+	org.apache.maven.surefire.api.booter.Command.<init>(Command.java:44)
+TRACE 300417:
+	org.apache.maven.surefire.booter.CommandReader$1.<clinit>(CommandReader.java:344)
+TRACE 300418:
+	java.util.concurrent.ConcurrentLinkedQueue.iterator(ConcurrentLinkedQueue.java:669)
+TRACE 300419:
+	java.util.concurrent.ConcurrentLinkedQueue$Itr.<init>(ConcurrentLinkedQueue.java:691)
+TRACE 300420:
+	java.lang.String.split(String.java:2377)
+TRACE 300421:
+	java.util.ArrayList.subList(ArrayList.java:1007)
+TRACE 300422:
+	java.util.ArrayList$SubList.listIterator(ArrayList.java:1105)
+TRACE 300423:
+	java.util.ArrayList$SubList$1.<init>(ArrayList.java:1105)
+TRACE 300424:
+	java.lang.Long.valueOf(Long.java:838)
+TRACE 300425:
+	java.lang.Long$LongCache.<clinit>(Long.java:809)
+TRACE 300426:
+	java.lang.Short.valueOf(Short.java:234)
+TRACE 300427:
+	java.lang.Short$ShortCache.<clinit>(Short.java:206)
+TRACE 300428:
+	java.lang.Byte.valueOf(Byte.java:103)
+TRACE 300429:
+	java.lang.Byte$ByteCache.<clinit>(Byte.java:80)
+TRACE 300430:
+	java.lang.Float.parseFloat(Float.java:451)
+TRACE 300431:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:250)
+TRACE 300432:
+	sun.misc.FloatingDecimal$ExceptionalBinaryToASCIIBuffer.<init>(FloatingDecimal.java:193)
+TRACE 300433:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:253)
+TRACE 300434:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<clinit>(FloatingDecimal.java:865)
+TRACE 300435:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<clinit>(FloatingDecimal.java:875)
+TRACE 300436:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:253)
+TRACE 300437:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<init>(FloatingDecimal.java:291)
+TRACE 300438:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<init>(FloatingDecimal.java:265)
+TRACE 300439:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:254)
+TRACE 300440:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:977)
+TRACE 300441:
+	sun.misc.FloatingDecimal.<clinit>(FloatingDecimal.java:1025)
+TRACE 300442:
+	sun.misc.FloatingDecimal$PreparedASCIIToBinaryBuffer.<init>(FloatingDecimal.java:1009)
+TRACE 300443:
+	sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1875)
+TRACE 300444:
+	sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2041)
+TRACE 300445:
+	sun.misc.FloatingDecimal$ASCIIToBinaryBuffer.<clinit>(FloatingDecimal.java:1705)
+TRACE 300446:
+	sun.misc.FloatingDecimal$ASCIIToBinaryBuffer.<clinit>(FloatingDecimal.java:1714)
+TRACE 300447:
+	sun.misc.FloatingDecimal$ASCIIToBinaryBuffer.<clinit>(FloatingDecimal.java:1720)
+TRACE 300448:
+	sun.misc.FloatingDecimal$ASCIIToBinaryBuffer.<clinit>(FloatingDecimal.java:1722)
+TRACE 300449:
+	sun.misc.FloatingDecimal$ASCIIToBinaryBuffer.<init>(FloatingDecimal.java:1041)
+TRACE 300450:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<init>(FloatingDecimal.java:284)
+TRACE 300451:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<init>(FloatingDecimal.java:265)
+TRACE 300452:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.<init>(FloatingDecimal.java:285)
+TRACE 300453:
+	sun.misc.FloatingDecimal$BinaryToASCIIBuffer.dtoa(FloatingDecimal.java:448)
+TRACE 300454:
+	sun.misc.FDBigInteger.<clinit>(FDBigInteger.java:67)
+TRACE 300455:
+	sun.misc.FDBigInteger.<clinit>(FDBigInteger.java:84)
+TRACE 300456:
+	sun.misc.FDBigInteger.<clinit>(FDBigInteger.java:122)
+TRACE 300457:
+	sun.misc.FDBigInteger.<clinit>(FDBigInteger.java:125)
+TRACE 300458:
+	sun.misc.FDBigInteger.<init>(FDBigInteger.java:185)
+TRACE 300459:
+	sun.misc.FDBigInteger.mult(FDBigInteger.java:1125)
+TRACE 300460:
+	sun.misc.FDBigInteger.<clinit>(FDBigInteger.java:139)
+TRACE 300461:
+	org.apache.maven.surefire.shared.lang3.JavaVersion.<clinit>(JavaVersion.java:28)
+TRACE 300462:
+	java.util.regex.Pattern.<clinit>(Pattern.java:5119)
+TRACE 300463:
+	java.util.regex.Pattern$Node.<init>(Pattern.java:3414)
+TRACE 300464:
+	java.util.regex.Pattern.<clinit>(Pattern.java:5562)
+TRACE 300465:
+	java.util.regex.Pattern.<init>(Pattern.java:1338)
+TRACE 300466:
+	java.util.regex.Pattern.compile(Pattern.java:1673)
+TRACE 300467:
+	java.util.regex.Pattern.compile(Pattern.java:1692)
+TRACE 300468:
+	java.util.regex.Pattern.compile(Pattern.java:1693)
+TRACE 300469:
+	java.util.regex.Pattern.compile(Pattern.java:1693)
+TRACE 300470:
+	java.util.regex.Pattern.sequence(Pattern.java:2104)
+TRACE 300471:
+	java.util.regex.Pattern.createGroup(Pattern.java:2998)
+TRACE 300472:
+	java.util.regex.Pattern.escape(Pattern.java:2405)
+TRACE 300473:
+	java.util.regex.Pattern.closure(Pattern.java:3133)
+TRACE 300474:
+	java.util.regex.Pattern.newSingle(Pattern.java:3372)
+TRACE 300475:
+	java.util.regex.Pattern.closure(Pattern.java:3113)
+TRACE 300476:
+	java.util.regex.Pattern.group0(Pattern.java:2942)
+TRACE 300477:
+	java.util.regex.Pattern.group0(Pattern.java:2945)
+TRACE 300478:
+	java.util.regex.Pattern$Branch.<init>(Pattern.java:4595)
+TRACE 300479:
+	java.util.regex.Pattern.closure(Pattern.java:3136)
+TRACE 300480:
+	java.util.regex.ASCII.<clinit>(ASCII.java:67)
+TRACE 300481:
+	java.util.regex.Pattern.sequence(Pattern.java:2112)
+TRACE 300482:
+	java.util.regex.Pattern.compile(Pattern.java:1714)
+TRACE 300483:
+	java.util.regex.Pattern.clazz(Pattern.java:2498)
+TRACE 300484:
+	java.util.regex.Pattern$BitClass.<init>(Pattern.java:3331)
+TRACE 300485:
+	org.apache.maven.surefire.booter.PpidChecker.<init>(PpidChecker.java:92)
+TRACE 300486:
+	org.apache.maven.surefire.booter.ForkedBooter$4.<init>(ForkedBooter.java:315)
+TRACE 300487:
+	org.apache.maven.surefire.api.booter.BiProperty.<init>(BiProperty.java:36)
+TRACE 300488:
+	org.apache.maven.surefire.booter.ForkedBooter$3.<init>(ForkedBooter.java:303)
+TRACE 300489:
+	org.apache.maven.surefire.api.util.internal.DaemonThreadFactory$NamedThreadFactory.<init>(DaemonThreadFactory.java:86)
+TRACE 300490:
+	java.util.concurrent.ThreadPoolExecutor.<clinit>(ThreadPoolExecutor.java:550)
+TRACE 300491:
+	java.util.concurrent.ThreadPoolExecutor$AbortPolicy.<init>(ThreadPoolExecutor.java:2051)
+TRACE 300492:
+	java.util.concurrent.ScheduledThreadPoolExecutor.<init>(ScheduledThreadPoolExecutor.java:447)
+TRACE 300493:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:75)
+TRACE 300494:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:90)
+TRACE 300495:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:105)
+TRACE 300496:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:120)
+TRACE 300497:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:135)
+TRACE 300498:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:150)
+TRACE 300499:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:165)
+TRACE 300500:
+	java.util.concurrent.TimeUnit.<clinit>(TimeUnit.java:71)
+TRACE 300501:
+	java.util.concurrent.ScheduledThreadPoolExecutor.<init>(ScheduledThreadPoolExecutor.java:447)
+TRACE 300502:
+	java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.<init>(ScheduledThreadPoolExecutor.java:836)
+TRACE 300503:
+	java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.<init>(ScheduledThreadPoolExecutor.java:836)
+TRACE 300504:
+	java.util.concurrent.locks.ReentrantLock$Sync.newCondition(ReentrantLock.java:168)
+TRACE 300505:
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.<init>(AbstractQueuedSynchronizer.java:1840)
+TRACE 300506:
+	java.util.concurrent.AbstractExecutorService.<init>(AbstractExecutorService.java:71)
+TRACE 300507:
+	org.apache.maven.surefire.booter.ForkedBooter$PingScheduler.<init>(ForkedBooter.java:630)
+TRACE 300508:
+	java.lang.ClassLoader.retrieveDirectives(ClassLoader.java:Unknown line)
+TRACE 300509:
+	org.apache.maven.surefire.api.util.TestsToRun.<init>(TestsToRun.java:53)
+TRACE 300510:
+	java.util.Collections$EmptySet.toArray(Collections.java:4324)
+TRACE 300511:
+	org.apache.maven.surefire.api.booter.BaseProviderFactory.<init>(BaseProviderFactory.java:81)
+TRACE 300512:
+	org.apache.maven.surefire.api.util.ReflectionUtils.<clinit>(ReflectionUtils.java:31)
+TRACE 300513:
+	org.apache.maven.surefire.api.util.ReflectionUtils.<clinit>(ReflectionUtils.java:32)
+TRACE 300514:
+	org.apache.maven.surefire.api.util.ReflectionUtils.instantiateOneArg(ReflectionUtils.java:122)
+TRACE 300515:
+	org.apache.maven.surefire.api.util.ReflectionUtils.instantiateOneArg(ReflectionUtils.java:123)
+TRACE 300516:
+	org.apache.maven.surefire.api.provider.AbstractProvider.<init>(AbstractProvider.java:27)
+TRACE 300517:
+	org.apache.maven.surefire.api.util.DefaultScanResult.<init>(DefaultScanResult.java:40)
+TRACE 300518:
+	org.apache.maven.surefire.api.util.DefaultRunOrderCalculator.<init>(DefaultRunOrderCalculator.java:49)
+TRACE 300519:
+	org.apache.maven.surefire.common.junit4.JUnit4TestChecker.<init>(JUnit4TestChecker.java:44)
+TRACE 300520:
+	org.apache.maven.surefire.common.junit3.JUnit3TestChecker.<clinit>(JUnit3TestChecker.java:42)
+TRACE 300521:
+	org.apache.maven.surefire.common.junit3.JUnit3TestChecker.<init>(JUnit3TestChecker.java:49)
+TRACE 300522:
+	org.apache.maven.surefire.api.filter.NonAbstractClassFilter.<init>(NonAbstractClassFilter.java:28)
+TRACE 300523:
+	java.io.Writer.<init>(Writer.java:86)
+TRACE 300524:
+	java.io.BufferedWriter.<init>(BufferedWriter.java:105)
+TRACE 300525:
+	org.junit.runner.notification.RunListener.<init>(RunListener.java:52)
+TRACE 300526:
+	org.junit.runner.notification.RunNotifier.<init>(RunNotifier.java:21)
+TRACE 300527:
+	sun.reflect.ConstantPool.<clinit>(ConstantPool.java:60)
+TRACE 300528:
+	java.lang.Class.createAnnotationData(Class.java:3521)
+TRACE 300529:
+	sun.reflect.annotation.AnnotationParser.<clinit>(AnnotationParser.java:197)
+TRACE 300530:
+	sun.reflect.annotation.AnnotationParser.<clinit>(AnnotationParser.java:863)
+TRACE 300531:
+	java.lang.Class$AnnotationData.<init>(Class.java:3490)
+TRACE 300532:
+	java.util.Collections.emptyIterator(Collections.java:4183)
+TRACE 300533:
+	java.util.Collections$EmptyIterator.<init>(Collections.java:4186)
+TRACE 300534:
+	java.io.ObjectStreamClass.<clinit>(ObjectStreamClass.java:82)
+TRACE 300535:
+	java.io.ObjectStreamClass.<clinit>(ObjectStreamClass.java:90)
+TRACE 300536:
+	java.io.ObjectStreamClass$1.<init>(ObjectStreamClass.java:92)
+TRACE 300537:
+	sun.reflect.ReflectionFactory$GetReflectionFactoryAction.<init>(ReflectionFactory.java:102)
+TRACE 300538:
+	java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:347)
+TRACE 300539:
+	java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:348)
+TRACE 300540:
+	java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:356)
+TRACE 300541:
+	java.io.ObjectStreamClass$EntryFuture.<clinit>(ObjectStreamClass.java:424)
+TRACE 300542:
+	java.io.ObjectStreamClass$EntryFuture.<init>(ObjectStreamClass.java:422)
+TRACE 300543:
+	java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:481)
+TRACE 300544:
+	java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:484)
+TRACE 300545:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:233)
+TRACE 300546:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:233)
+TRACE 300547:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:240)
+TRACE 300548:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:240)
+TRACE 300549:
+	java.lang.reflect.Proxy$KeyFactory.<init>(Proxy.java:539)
+TRACE 300550:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:240)
+TRACE 300551:
+	java.lang.reflect.Proxy$ProxyClassFactory.<init>(Proxy.java:557)
+TRACE 300552:
+	java.lang.reflect.WeakCache.<init>(WeakCache.java:80)
+TRACE 300553:
+	java.lang.reflect.Proxy.<clinit>(Proxy.java:425)
+TRACE 300554:
+	java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:487)
+TRACE 300555:
+	java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:494)
+TRACE 300556:
+	java.io.ObjectStreamClass$3.<init>(ObjectStreamClass.java:494)
+TRACE 300557:
+	sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:156)
+TRACE 300558:
+	sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:77)
+TRACE 300559:
+	sun.reflect.UnsafeStaticFieldAccessorImpl.<clinit>(UnsafeStaticFieldAccessorImpl.java:42)
+TRACE 300560:
+	java.lang.Class.getDeclaredField(Class.java:2070)
+TRACE 300561:
+	java.lang.Class.copyFields(Class.java:3112)
+TRACE 300562:
+	java.io.ObjectStreamField.<init>(ObjectStreamField.java:134)
+TRACE 300563:
+	java.io.ObjectStreamClass.getDefaultSerialFields(ObjectStreamClass.java:1862)
+TRACE 300564:
+	java.util.Arrays.sort(Arrays.java:1243)
+TRACE 300565:
+	java.util.Arrays$LegacyMergeSort.<clinit>(Arrays.java:1194)
+TRACE 300566:
+	sun.security.action.GetBooleanAction.<init>(GetBooleanAction.java:59)
+TRACE 300567:
+	java.util.Arrays.sort(Arrays.java:1246)
+TRACE 300568:
+	sun.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:397)
+TRACE 300569:
+	sun.reflect.AccessorGenerator.<clinit>(AccessorGenerator.java:678)
+TRACE 300570:
+	sun.reflect.AccessorGenerator.<init>(AccessorGenerator.java:33)
+TRACE 300571:
+	sun.reflect.MethodAccessorGenerator.generate(MethodAccessorGenerator.java:134)
+TRACE 300572:
+	sun.reflect.ByteVectorFactory.create(ByteVectorFactory.java:30)
+TRACE 300573:
+	sun.reflect.ByteVectorImpl.<init>(ByteVectorImpl.java:36)
+TRACE 300574:
+	sun.reflect.ByteVectorImpl.<init>(ByteVectorImpl.java:37)
+TRACE 300575:
+	sun.reflect.MethodAccessorGenerator.generate(MethodAccessorGenerator.java:135)
+TRACE 300576:
+	sun.reflect.ClassFileAssembler.<init>(ClassFileAssembler.java:36)
+TRACE 300577:
+	sun.reflect.ClassFileAssembler.emitConstantPoolUTF8(ClassFileAssembler.java:103)
+TRACE 300578:
+	sun.reflect.UTF8.encode(UTF8.java:36)
+TRACE 300579:
+	sun.reflect.ByteVectorImpl.resize(ByteVectorImpl.java:84)
+TRACE 300580:
+	sun.reflect.MethodAccessorGenerator.emitInvoke(MethodAccessorGenerator.java:495)
+TRACE 300581:
+	sun.reflect.Label.<init>(Label.java:57)
+TRACE 300582:
+	sun.reflect.Label.add(Label.java:65)
+TRACE 300583:
+	sun.reflect.Label$PatchInfo.<init>(Label.java:42)
+TRACE 300584:
+	sun.reflect.MethodAccessorGenerator.emitInvoke(MethodAccessorGenerator.java:720)
+TRACE 300585:
+	sun.reflect.ByteVectorImpl.trim(ByteVectorImpl.java:70)
+TRACE 300586:
+	sun.reflect.MethodAccessorGenerator.generate(MethodAccessorGenerator.java:393)
+TRACE 300587:
+	sun.reflect.MethodAccessorGenerator$1.<init>(MethodAccessorGenerator.java:394)
+TRACE 300588:
+	sun.reflect.MethodAccessorGenerator$1.run(MethodAccessorGenerator.java:399)
+TRACE 300589:
+	sun.reflect.ClassDefiner.defineClass(ClassDefiner.java:57)
+TRACE 300590:
+	sun.reflect.ClassDefiner$1.<init>(ClassDefiner.java:58)
+TRACE 300591:
+	java.lang.ClassLoader.<init>(ClassLoader.java:276)
+TRACE 300592:
+	java.security.CodeSource.<init>(CodeSource.java:85)
+TRACE 300593:
+	sun.misc.Unsafe.defineClass(Unsafe.java:Unknown line)
+TRACE 300594:
+	sun.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:196)
+TRACE 300595:
+	java.io.ObjectStreamClass$3.run(ObjectStreamClass.java:520)
+TRACE 300596:
+	java.io.ObjectStreamClass$3.run(ObjectStreamClass.java:520)
+TRACE 300597:
+	java.io.ObjectStreamClass$3.run(ObjectStreamClass.java:523)
+TRACE 300598:
+	java.lang.Class.getDeclaredMethods0(Class.java:Unknown line)
+TRACE 300599:
+	java.io.ObjectStreamClass.getReflector(ObjectStreamClass.java:2331)
+TRACE 300600:
+	java.io.ObjectStreamClass$FieldReflectorKey.<init>(ObjectStreamClass.java:2398)
+TRACE 300601:
+	java.io.ObjectStreamClass.getReflector(ObjectStreamClass.java:2362)
+TRACE 300602:
+	java.io.ObjectStreamClass.matchFields(ObjectStreamClass.java:2458)
+TRACE 300603:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2097)
+TRACE 300604:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2100)
+TRACE 300605:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2101)
+TRACE 300606:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2102)
+TRACE 300607:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2103)
+TRACE 300608:
+	java.io.ObjectStreamClass$FieldReflector.<init>(ObjectStreamClass.java:2123)
+TRACE 300609:
+	org.junit.runner.Result.<init>(Result.java:39)
+TRACE 300610:
+	sun.reflect.annotation.AnnotationParser.parseSig(AnnotationParser.java:435)
+TRACE 300611:
+	sun.reflect.generics.parser.SignatureParser.<init>(SignatureParser.java:74)
+TRACE 300612:
+	sun.reflect.generics.parser.SignatureParser.parsePackageNameAndSimpleClassTypeSignature(SignatureParser.java:343)
+TRACE 300613:
+	sun.reflect.generics.parser.SignatureParser.parsePackageNameAndSimpleClassTypeSignature(SignatureParser.java:343)
+TRACE 300614:
+	sun.reflect.generics.parser.SignatureParser.parsePackageNameAndSimpleClassTypeSignature(SignatureParser.java:343)
+TRACE 300615:
+	sun.reflect.generics.tree.SimpleClassTypeSignature.<init>(SimpleClassTypeSignature.java:35)
+TRACE 300616:
+	sun.reflect.generics.parser.SignatureParser.parseClassTypeSignature(SignatureParser.java:317)
+TRACE 300617:
+	sun.reflect.generics.tree.ClassTypeSignature.<init>(ClassTypeSignature.java:39)
+TRACE 300618:
+	sun.reflect.annotation.AnnotationParser.parseSig(AnnotationParser.java:437)
+TRACE 300619:
+	sun.reflect.generics.scope.AbstractScope.<init>(AbstractScope.java:55)
+TRACE 300620:
+	sun.reflect.annotation.AnnotationParser.parseSig(AnnotationParser.java:437)
+TRACE 300621:
+	sun.reflect.generics.factory.CoreReflectionFactory.<init>(CoreReflectionFactory.java:51)
+TRACE 300622:
+	sun.reflect.annotation.AnnotationParser.parseSig(AnnotationParser.java:438)
+TRACE 300623:
+	sun.reflect.generics.visitor.Reifier.<init>(Reifier.java:44)
+TRACE 300624:
+	sun.reflect.annotation.AnnotationParser.toClass(AnnotationParser.java:444)
+TRACE 300625:
+	sun.reflect.annotation.AnnotationType.<init>(AnnotationType.java:104)
+TRACE 300626:
+	sun.reflect.annotation.AnnotationType.<init>(AnnotationType.java:108)
+TRACE 300627:
+	sun.reflect.annotation.AnnotationType$1.<init>(AnnotationType.java:109)
+TRACE 300628:
+	java.lang.Class.copyMethods(Class.java:3121)
+TRACE 300629:
+	sun.reflect.annotation.AnnotationType.<init>(AnnotationType.java:141)
+TRACE 300630:
+	sun.reflect.annotation.AnnotationType.<init>(AnnotationType.java:141)
+TRACE 300631:
+	sun.reflect.annotation.AnnotationType.<init>(AnnotationType.java:147)
+TRACE 300632:
+	java.lang.annotation.RetentionPolicy.<clinit>(RetentionPolicy.java:37)
+TRACE 300633:
+	sun.reflect.annotation.AnnotationParser.parseAnnotation2(AnnotationParser.java:287)
+TRACE 300634:
+	sun.reflect.annotation.AnnotationParser.annotationForMap(AnnotationParser.java:303)
+TRACE 300635:
+	sun.reflect.annotation.AnnotationParser$1.<init>(AnnotationParser.java:303)
+TRACE 300636:
+	sun.reflect.annotation.AnnotationParser$1.run(AnnotationParser.java:306)
+TRACE 300637:
+	sun.reflect.annotation.AnnotationParser$1.run(AnnotationParser.java:306)
+TRACE 300638:
+	sun.reflect.annotation.AnnotationInvocationHandler.<init>(AnnotationInvocationHandler.java:47)
+TRACE 300639:
+	java.lang.reflect.WeakCache.get(WeakCache.java:105)
+TRACE 300640:
+	java.lang.reflect.WeakCache$CacheKey.<clinit>(WeakCache.java:330)
+TRACE 300641:
+	java.lang.reflect.Proxy$KeyFactory.apply(Proxy.java:545)
+TRACE 300642:
+	java.lang.reflect.WeakCache.get(WeakCache.java:138)
+TRACE 300643:
+	java.lang.reflect.WeakCache$Factory.<init>(WeakCache.java:206)
+TRACE 300644:
+	java.lang.reflect.Proxy$ProxyClassFactory.apply(Proxy.java:639)
+TRACE 300645:
+	sun.misc.ProxyGenerator.<clinit>(ProxyGenerator.java:374)
+TRACE 300646:
+	sun.misc.ProxyGenerator.<clinit>(ProxyGenerator.java:375)
+TRACE 300647:
+	sun.misc.ProxyGenerator.<clinit>(ProxyGenerator.java:377)
+TRACE 300648:
+	sun.misc.ProxyGenerator.<init>(ProxyGenerator.java:417)
+TRACE 300649:
+	sun.misc.ProxyGenerator.<init>(ProxyGenerator.java:393)
+TRACE 300650:
+	sun.misc.ProxyGenerator$ConstantPool.<init>(ProxyGenerator.java:1710)
+TRACE 300651:
+	sun.misc.ProxyGenerator.addProxyMethod(ProxyGenerator.java:618)
+TRACE 300652:
+	sun.misc.ProxyGenerator$ProxyMethod.<init>(ProxyGenerator.java:884)
+TRACE 300653:
+	sun.misc.ProxyGenerator.addProxyMethod(ProxyGenerator.java:608)
+TRACE 300654:
+	java.util.HashMap.values(HashMap.java:959)
+TRACE 300655:
+	java.util.HashMap$Values.iterator(HashMap.java:968)
+TRACE 300656:
+	sun.misc.ProxyGenerator.generateConstructor(ProxyGenerator.java:1165)
+TRACE 300657:
+	sun.misc.ProxyGenerator$MethodInfo.<init>(ProxyGenerator.java:793)
+TRACE 300658:
+	sun.misc.ProxyGenerator$ConstantPool.getValue(ProxyGenerator.java:1887)
+TRACE 300659:
+	sun.misc.ProxyGenerator$ConstantPool$Entry.<init>(ProxyGenerator.java:1916)
+TRACE 300660:
+	sun.misc.ProxyGenerator.generateConstructor(ProxyGenerator.java:1169)
+TRACE 300661:
+	java.io.DataOutputStream.<init>(DataOutputStream.java:204)
+TRACE 300662:
+	sun.misc.ProxyGenerator$ConstantPool.getClass(ProxyGenerator.java:1761)
+TRACE 300663:
+	sun.misc.ProxyGenerator.generateConstructor(ProxyGenerator.java:1184)
+TRACE 300664:
+	sun.misc.ProxyGenerator.generateClassFile(ProxyGenerator.java:475)
+TRACE 300665:
+	sun.misc.ProxyGenerator$FieldInfo.<init>(ProxyGenerator.java:727)
+TRACE 300666:
+	sun.misc.ProxyGenerator.getFieldType(ProxyGenerator.java:1479)
+TRACE 300667:
+	sun.misc.ProxyGenerator$PrimitiveTypeInfo.<init>(ProxyGenerator.java:1675)
+TRACE 300668:
+	sun.misc.ProxyGenerator$ProxyMethod.generateMethod(ProxyGenerator.java:902)
+TRACE 300669:
+	sun.misc.ProxyGenerator$ProxyMethod.generateMethod(ProxyGenerator.java:975)
+TRACE 300670:
+	sun.misc.ProxyGenerator$ExceptionTableEntry.<init>(ProxyGenerator.java:769)
+TRACE 300671:
+	sun.misc.ProxyGenerator$ProxyMethod.generateMethod(ProxyGenerator.java:1012)
+TRACE 300672:
+	sun.misc.ProxyGenerator.generateStaticInitializer(ProxyGenerator.java:1266)
+TRACE 300673:
+	java.io.DataOutputStream.writeUTF(DataOutputStream.java:371)
+TRACE 300674:
+	java.lang.reflect.Proxy.defineClass0(Proxy.java:Unknown line)
+TRACE 300675:
+	java.lang.reflect.WeakCache$Factory.get(WeakCache.java:240)
+TRACE 300676:
+	java.lang.reflect.Proxy.newProxyInstance(Proxy.java:739)
+TRACE 300677:
+	com.sun.proxy.$Proxy0.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300678:
+	com.sun.proxy.$Proxy0.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300679:
+	com.sun.proxy.$Proxy0.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300680:
+	com.sun.proxy.$Proxy0.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300681:
+	com.sun.proxy.$Proxy0.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300682:
+	java.lang.reflect.Proxy.<init>(Proxy.java:264)
+TRACE 300683:
+	com.sun.proxy.$Proxy1.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300684:
+	com.sun.proxy.$Proxy1.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300685:
+	com.sun.proxy.$Proxy1.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300686:
+	com.sun.proxy.$Proxy1.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300687:
+	org.apache.maven.surefire.common.junit4.JUnit4Reflector.<clinit>(JUnit4Reflector.java:38)
+TRACE 300688:
+	org.apache.maven.surefire.common.junit4.JUnit4Reflector.<clinit>(JUnit4Reflector.java:40)
+TRACE 300689:
+	org.apache.maven.surefire.common.junit4.JUnit4Reflector.<clinit>(JUnit4Reflector.java:42)
+TRACE 300690:
+	org.apache.maven.surefire.common.junit4.JUnit4Reflector.createDescription(JUnit4Reflector.java:71)
+TRACE 300691:
+	org.apache.maven.surefire.common.junit4.JUnit4Reflector.createDescription(JUnit4Reflector.java:71)
+TRACE 300692:
+	java.util.regex.Pattern$CharProperty.complement(Pattern.java:3783)
+TRACE 300693:
+	java.util.regex.Pattern.union(Pattern.java:5263)
+TRACE 300694:
+	java.util.regex.Pattern.sequence(Pattern.java:2122)
+TRACE 300695:
+	java.util.regex.Pattern.compile(Pattern.java:1719)
+TRACE 300696:
+	java.util.regex.Pattern.compile(Pattern.java:1722)
+TRACE 300697:
+	java.util.regex.Pattern$Start.<init>(Pattern.java:3464)
+TRACE 300698:
+	java.util.regex.Pattern$TreeInfo.<init>(Pattern.java:1787)
+TRACE 300699:
+	org.junit.runner.Description.<clinit>(Description.java:141)
+TRACE 300700:
+	org.junit.runner.Description.<init>(Description.java:165)
+TRACE 300701:
+	org.junit.runner.Description.<clinit>(Description.java:148)
+TRACE 300702:
+	org.junit.runner.notification.RunNotifier$SafeNotifier.<init>(RunNotifier.java:62)
+TRACE 300703:
+	java.util.concurrent.CopyOnWriteArrayList.iterator(CopyOnWriteArrayList.java:1082)
+TRACE 300704:
+	java.util.concurrent.CopyOnWriteArrayList$COWIterator.<init>(CopyOnWriteArrayList.java:1141)
+TRACE 300705:
+	org.apache.maven.surefire.junit4.JUnit4Provider$1.<init>(JUnit4Provider.java:210)
+TRACE 300706:
+	org.apache.maven.surefire.booter.LazyTestsToRun$BlockingIterator.<init>(LazyTestsToRun.java:62)
+TRACE 300707:
+	org.apache.maven.surefire.booter.CommandReader$ClassesIterable.<init>(CommandReader.java:218)
+TRACE 300708:
+	org.apache.maven.surefire.booter.CommandReader$ClassesIterator.<init>(CommandReader.java:239)
+TRACE 300709:
+	org.apache.maven.surefire.api.booter.ForkedProcessEventType.<clinit>(ForkedProcessEventType.java:34)
+TRACE 300710:
+	sun.nio.cs.US_ASCII.newEncoder(US_ASCII.java:58)
+TRACE 300711:
+	sun.nio.cs.US_ASCII$Encoder.<init>(US_ASCII.java:167)
+TRACE 300712:
+	sun.nio.cs.Surrogate$Parser.<clinit>(Surrogate.java:118)
+TRACE 300713:
+	sun.nio.cs.Surrogate$Parser.<init>(Surrogate.java:120)
+TRACE 300714:
+	java.lang.StringCoding.encode(StringCoding.java:350)
+TRACE 300715:
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$Node.<init>(AbstractQueuedSynchronizer.java:502)
+TRACE 300716:
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$Node.<init>(AbstractQueuedSynchronizer.java:505)
+TRACE 300717:
+	java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+TRACE 300718:
+	sun.misc.URLClassPath$FileLoader.getResource(URLClassPath.java:1380)
+TRACE 300719:
+	org.apache.maven.surefire.api.report.SimpleReportEntry.<init>(SimpleReportEntry.java:82)
+TRACE 300720:
+	org.apache.maven.surefire.shared.codec.binary.BaseNCodec$Context.<init>(BaseNCodec.java:92)
+TRACE 300721:
+	org.apache.maven.surefire.shared.codec.binary.BaseNCodec.resizeBuffer(BaseNCodec.java:250)
+TRACE 300722:
+	org.apache.maven.surefire.shared.codec.binary.BaseNCodec.encode(BaseNCodec.java:454)
+TRACE 300723:
+	java.lang.String.<init>(String.java:459)
+TRACE 300724:
+	sun.nio.cs.US_ASCII.newDecoder(US_ASCII.java:54)
+TRACE 300725:
+	java.lang.StringCoding.decode(StringCoding.java:215)
+TRACE 300726:
+	org.junit.runner.manipulation.Filter.<init>(Filter.java:17)
+TRACE 300727:
+	org.junit.runner.Request.<init>(Request.java:29)
+TRACE 300728:
+	org.junit.runners.model.RunnerBuilder.<init>(RunnerBuilder.java:43)
+TRACE 300729:
+	org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:29)
+TRACE 300730:
+	org.junit.internal.builders.SuiteMethodBuilder.hasSuiteMethod(SuiteMethodBuilder.java:18)
+TRACE 300731:
+	org.junit.validator.AnnotationsValidator.<clinit>(AnnotationsValidator.java:22)
+TRACE 300732:
+	org.junit.validator.AnnotationValidatorFactory.<init>(AnnotationValidatorFactory.java:10)
+TRACE 300733:
+	org.junit.validator.AnnotationsValidator$AnnotatableValidator.<init>(AnnotationsValidator.java:43)
+TRACE 300734:
+	org.junit.validator.AnnotationsValidator.<init>(AnnotationsValidator.java:21)
+TRACE 300735:
+	java.util.Collections.singletonList(Collections.java:4791)
+TRACE 300736:
+	org.junit.validator.PublicClassValidator.<init>(PublicClassValidator.java:15)
+TRACE 300737:
+	org.junit.runners.model.TestClass$FieldComparator.<init>(TestClass.java:333)
+TRACE 300738:
+	org.junit.runners.model.TestClass$MethodComparator.<init>(TestClass.java:342)
+TRACE 300739:
+	org.junit.runners.model.TestClass.<init>(TestClass.java:45)
+TRACE 300740:
+	org.junit.internal.MethodSorter$1.<init>(MethodSorter.java:13)
+TRACE 300741:
+	org.junit.internal.MethodSorter$2.<init>(MethodSorter.java:27)
+TRACE 300742:
+	java.util.Arrays.sort(Arrays.java:1438)
+TRACE 300743:
+	org.junit.runners.model.FrameworkMember.<init>(FrameworkMember.java:11)
+TRACE 300744:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300745:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300746:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300747:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300748:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300749:
+	com.sun.proxy.$Proxy2.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300750:
+	java.util.LinkedHashMap.values(LinkedHashMap.java:586)
+TRACE 300751:
+	java.util.LinkedHashMap$LinkedValues.iterator(LinkedHashMap.java:596)
+TRACE 300752:
+	java.util.TimSort.<init>(TimSort.java:146)
+TRACE 300753:
+	java.util.TimSort.<init>(TimSort.java:185)
+TRACE 300754:
+	java.util.TimSort.<init>(TimSort.java:186)
+TRACE 300755:
+	com.sun.proxy.$Proxy3.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300756:
+	com.sun.proxy.$Proxy3.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300757:
+	com.sun.proxy.$Proxy3.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300758:
+	com.sun.proxy.$Proxy3.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300759:
+	org.junit.runner.Runner.<init>(Runner.java:22)
+TRACE 300760:
+	org.junit.runners.ParentRunner$1.<init>(ParentRunner.java:77)
+TRACE 300761:
+	org.junit.internal.runners.rules.RuleMemberValidator$Builder.<init>(RuleMemberValidator.java:116)
+TRACE 300762:
+	org.junit.internal.runners.rules.RuleMemberValidator$DeclaringClassMustBePublic.<init>(RuleMemberValidator.java:203)
+TRACE 300763:
+	org.junit.internal.runners.rules.RuleMemberValidator$MemberMustBeStatic.<init>(RuleMemberValidator.java:191)
+TRACE 300764:
+	org.junit.internal.runners.rules.RuleMemberValidator$MemberMustBePublic.<init>(RuleMemberValidator.java:219)
+TRACE 300765:
+	org.junit.internal.runners.rules.RuleMemberValidator$FieldMustBeATestRule.<init>(RuleMemberValidator.java:269)
+TRACE 300766:
+	org.junit.internal.runners.rules.RuleMemberValidator.<init>(RuleMemberValidator.java:75)
+TRACE 300767:
+	org.junit.internal.runners.rules.RuleMemberValidator$MemberMustBeNonStaticOrAlsoClassRule.<init>(RuleMemberValidator.java:166)
+TRACE 300768:
+	org.junit.internal.runners.rules.RuleMemberValidator$FieldMustBeARule.<init>(RuleMemberValidator.java:231)
+TRACE 300769:
+	org.junit.internal.runners.rules.RuleMemberValidator$MethodMustBeATestRule.<init>(RuleMemberValidator.java:256)
+TRACE 300770:
+	org.junit.internal.runners.rules.RuleMemberValidator$MethodMustBeARule.<init>(RuleMemberValidator.java:244)
+TRACE 300771:
+	java.util.AbstractCollection.toArray(AbstractCollection.java:136)
+TRACE 300772:
+	com.sun.proxy.$Proxy4.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300773:
+	com.sun.proxy.$Proxy4.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300774:
+	com.sun.proxy.$Proxy4.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300775:
+	com.sun.proxy.$Proxy4.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300776:
+	java.lang.annotation.ElementType.<clinit>(ElementType.java:73)
+TRACE 300777:
+	com.sun.proxy.$Proxy5.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300778:
+	com.sun.proxy.$Proxy5.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300779:
+	com.sun.proxy.$Proxy5.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300780:
+	com.sun.proxy.$Proxy5.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300781:
+	com.sun.proxy.$Proxy5.<clinit>(<Unknown Source>:Unknown line)
+TRACE 300782:
+	java.util.Collections$EmptyList.toArray(Collections.java:4447)
+TRACE 300783:
+	org.junit.runner.Description.formatDisplayName(Description.java:114)
+TRACE 300784:
+	java.lang.String.format(String.java:2940)
+TRACE 300785:
+	java.util.regex.Pattern.rangeFor(Pattern.java:4123)
+TRACE 300786:
+	java.util.Formatter.<init>(Formatter.java:1914)
+TRACE 300787:
+	java.util.Locale$Category.<clinit>(Locale.java:2298)
+TRACE 300788:
+	java.util.Locale.getDefault(Locale.java:836)
+TRACE 300789:
+	java.util.Locale$1.<clinit>(Locale.java:836)
+TRACE 300790:
+	sun.security.action.GetPropertyAction.<init>(GetPropertyAction.java:73)
+TRACE 300791:
+	sun.util.locale.BaseLocale$Key.<init>(BaseLocale.java:204)
+TRACE 300792:
+	java.util.Locale$LocaleKey.<init>(Locale.java:765)
+TRACE 300793:
+	java.util.Formatter.<init>(Formatter.java:1889)
+TRACE 300794:
+	java.util.Formatter.getZero(Formatter.java:2283)
+TRACE 300795:
+	java.text.DecimalFormatSymbols.getInstance(DecimalFormatSymbols.java:178)
+TRACE 300796:
+	java.text.DecimalFormatSymbols.getInstance(DecimalFormatSymbols.java:178)
+TRACE 300797:
+	sun.util.locale.provider.LocaleProviderAdapter.<clinit>(LocaleProviderAdapter.java:99)
+TRACE 300798:
+	sun.util.locale.provider.LocaleProviderAdapter.<init>(LocaleProviderAdapter.java:58)
+TRACE 300799:
+	sun.util.locale.provider.LocaleProviderAdapter.<clinit>(LocaleProviderAdapter.java:104)
+TRACE 300800:
+	sun.util.locale.provider.AuxLocaleProviderAdapter.<clinit>(AuxLocaleProviderAdapter.java:181)
+TRACE 300801:
+	java.util.spi.LocaleServiceProvider.<init>(LocaleServiceProvider.java:148)
+TRACE 300802:
+	sun.util.locale.provider.LocaleProviderAdapter.<clinit>(LocaleProviderAdapter.java:181)
+TRACE 300803:
+	sun.util.locale.provider.LocaleProviderAdapter$Type.<clinit>(LocaleProviderAdapter.java:62)
+TRACE 300804:
+	sun.util.locale.provider.LocaleProviderAdapter.forType(LocaleProviderAdapter.java:193)
+TRACE 300805:
+	sun.util.locale.provider.LocaleProviderAdapter$1.<clinit>(LocaleProviderAdapter.java:147)
+TRACE 300806:
+	sun.util.locale.provider.JRELocaleProviderAdapter.getDecimalFormatSymbolsProvider(JRELocaleProviderAdapter.java:193)
+TRACE 300807:
+	sun.util.locale.provider.JRELocaleProviderAdapter.createLanguageTagSet(JRELocaleProviderAdapter.java:359)
+TRACE 300808:
+	sun.util.locale.provider.JRELocaleProviderAdapter.isNonENLangSupported(JRELocaleProviderAdapter.java:456)
+TRACE 300809:
+	sun.util.locale.provider.JRELocaleProviderAdapter$1.<init>(JRELocaleProviderAdapter.java:457)
+TRACE 300810:
+	java.util.Locale.toLanguageTag(Locale.java:1395)
+TRACE 300811:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300812:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300813:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300814:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300815:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300816:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300817:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300818:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300819:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300820:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300821:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300822:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300823:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300824:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300825:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300826:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300827:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300828:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300829:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300830:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300831:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300832:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300833:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300834:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300835:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300836:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300837:
+	sun.util.locale.LanguageTag.<clinit>(LanguageTag.java:99)
+TRACE 300838:
+	sun.util.locale.LocaleUtils.toLowerString(LocaleUtils.java:100)
+TRACE 300839:
+	sun.util.locale.LanguageTag.<init>(LanguageTag.java:133)
+TRACE 300840:
+	java.text.DecimalFormatSymbols.<init>(DecimalFormatSymbols.java:112)
+TRACE 300841:
+	sun.util.locale.provider.JRELocaleProviderAdapter.getLocaleResources(JRELocaleProviderAdapter.java:313)
+TRACE 300842:
+	sun.util.locale.provider.LocaleResources.<clinit>(LocaleResources.java:91)
+TRACE 300843:
+	sun.util.locale.provider.LocaleResources.<init>(LocaleResources.java:93)
+TRACE 300844:
+	sun.util.locale.provider.JRELocaleProviderAdapter.getLocaleData(JRELocaleProviderAdapter.java:328)
+TRACE 300845:
+	sun.util.resources.LocaleData.<init>(LocaleData.java:70)
+TRACE 300846:
+	sun.util.resources.LocaleData.getBundle(LocaleData.java:163)
+TRACE 300847:
+	sun.util.resources.LocaleData$1.<init>(LocaleData.java:163)
+TRACE 300848:
+	sun.util.resources.LocaleData$1.run(LocaleData.java:167)
+TRACE 300849:
+	java.util.ResourceBundle$Control.<clinit>(ResourceBundle.java:2041)
+TRACE 300850:
+	java.util.ResourceBundle$Control.<clinit>(ResourceBundle.java:2052)
+TRACE 300851:
+	java.util.ResourceBundle$Control.<clinit>(ResourceBundle.java:2062)
+TRACE 300852:
+	java.util.ResourceBundle$Control.<init>(ResourceBundle.java:2087)
+TRACE 300853:
+	java.util.ResourceBundle$Control.<clinit>(ResourceBundle.java:2387)
+TRACE 300854:
+	sun.util.locale.LocaleObjectCache.<init>(LocaleObjectCache.java:47)
+TRACE 300855:
+	sun.util.resources.LocaleData$1.run(LocaleData.java:167)
+TRACE 300856:
+	java.util.ResourceBundle.<clinit>(ResourceBundle.java:293)
+TRACE 300857:
+	java.util.ResourceBundle.<init>(ResourceBundle.java:390)
+TRACE 300858:
+	java.util.ResourceBundle.<clinit>(ResourceBundle.java:375)
+TRACE 300859:
+	java.util.ResourceBundle.getLoader(ResourceBundle.java:482)
+TRACE 300860:
+	java.util.ResourceBundle$RBClassLoader.<clinit>(ResourceBundle.java:491)
+TRACE 300861:
+	java.util.ResourceBundle$RBClassLoader$1.<init>(ResourceBundle.java:492)
+TRACE 300862:
+	java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1333)
+TRACE 300863:
+	java.util.ResourceBundle$CacheKey.<init>(ResourceBundle.java:576)
+TRACE 300864:
+	java.util.ResourceBundle$CacheKey.<init>(ResourceBundle.java:582)
+TRACE 300865:
+	java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1354)
+TRACE 300866:
+	java.util.ResourceBundle$Control$CandidateListCache.getDefaultList(ResourceBundle.java:2474)
+TRACE 300867:
+	java.util.LinkedList.linkLast(LinkedList.java:142)
+TRACE 300868:
+	java.util.LinkedList$Node.<init>(LinkedList.java:975)
+TRACE 300869:
+	java.util.LinkedList.toArray(LinkedList.java:1050)
+TRACE 300870:
+	sun.util.resources.ParallelListResourceBundle.<init>(ParallelListResourceBundle.java:51)
+TRACE 300871:
+	java.util.concurrent.atomic.AtomicMarkableReference.<init>(AtomicMarkableReference.java:73)
+TRACE 300872:
+	java.util.concurrent.atomic.AtomicMarkableReference$Pair.<init>(AtomicMarkableReference.java:55)
+TRACE 300873:
+	java.util.ResourceBundle.putBundleInCache(ResourceBundle.java:1711)
+TRACE 300874:
+	sun.util.locale.provider.LocaleResources.getDecimalFormatSymbolsData(LocaleResources.java:169)
+TRACE 300875:
+	sun.util.resources.ParallelListResourceBundle.keySet(ParallelListResourceBundle.java:143)
+TRACE 300876:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300877:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300878:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300879:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300880:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300881:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300882:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300883:
+	sun.text.resources.en.FormatData_en_GB.getContents(FormatData_en_GB.java:50)
+TRACE 300884:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300885:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300886:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300887:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300888:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300889:
+	sun.text.resources.en.FormatData_en.getContents(FormatData_en.java:55)
+TRACE 300890:
+	sun.text.resources.FormatData.getContents(FormatData.java:91)
+TRACE 300891:
+	sun.text.resources.FormatData.getContents(FormatData.java:97)
+TRACE 300892:
+	sun.text.resources.FormatData.getContents(FormatData.java:103)
+TRACE 300893:
+	sun.text.resources.FormatData.getContents(FormatData.java:113)
+TRACE 300894:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300895:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300896:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300897:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300898:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300899:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300900:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300901:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300902:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300903:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300904:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300905:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300906:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300907:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300908:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300909:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300910:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300911:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300912:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300913:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300914:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300915:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300916:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300917:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300918:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300919:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300920:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300921:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300922:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300923:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300924:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300925:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300926:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300927:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300928:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300929:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300930:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300931:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300932:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300933:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300934:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300935:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300936:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300937:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300938:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300939:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300940:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300941:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300942:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300943:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300944:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300945:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300946:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300947:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300948:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300949:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300950:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300951:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300952:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300953:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300954:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300955:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300956:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300957:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300958:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300959:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300960:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300961:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300962:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300963:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300964:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300965:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300966:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300967:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300968:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300969:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300970:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300971:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300972:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300973:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300974:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300975:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300976:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300977:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300978:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300979:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300980:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300981:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300982:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300983:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300984:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300985:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300986:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300987:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300988:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300989:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300990:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300991:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300992:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300993:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300994:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300995:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300996:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300997:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300998:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 300999:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301000:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301001:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301002:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301003:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301004:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301005:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301006:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301007:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301008:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301009:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301010:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301011:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301012:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301013:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301014:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301015:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301016:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301017:
+	sun.text.resources.FormatData.getContents(FormatData.java:122)
+TRACE 301018:
+	sun.util.locale.provider.LocaleResources.getDecimalFormatSymbolsData(LocaleResources.java:195)
+TRACE 301019:
+	java.text.DecimalFormatSymbols.initialize(DecimalFormatSymbols.java:638)
+TRACE 301020:
+	java.util.Currency.<clinit>(Currency.java:214)
+TRACE 301021:
+	java.util.Currency$1.<init>(Currency.java:214)
+TRACE 301022:
+	java.util.Currency$1.run(Currency.java:221)
+TRACE 301023:
+	java.io.DataInputStream.<init>(DataInputStream.java:58)
+TRACE 301024:
+	java.io.DataInputStream.<init>(DataInputStream.java:59)
+TRACE 301025:
+	java.io.DataInputStream.<init>(DataInputStream.java:396)
+TRACE 301026:
+	java.util.Currency.readIntArray(Currency.java:654)
+TRACE 301027:
+	java.util.Currency.readLongArray(Currency.java:663)
+TRACE 301028:
+	java.util.Currency.readStringArray(Currency.java:672)
+TRACE 301029:
+	java.io.DataInputStream.readUTF(DataInputStream.java:595)
+TRACE 301030:
+	java.io.DataInputStream.readUTF(DataInputStream.java:596)
+TRACE 301031:
+	java.util.Currency.<init>(Currency.java:294)
+TRACE 301032:
+	java.util.Currency.getSymbol(Currency.java:505)
+TRACE 301033:
+	java.util.Currency.getSymbol(Currency.java:506)
+TRACE 301034:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301035:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301036:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301037:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301038:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301039:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301040:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301041:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301042:
+	sun.util.locale.provider.LocaleServiceProviderPool.<clinit>(LocaleServiceProviderPool.java:91)
+TRACE 301043:
+	sun.util.locale.provider.LocaleServiceProviderPool.<init>(LocaleServiceProviderPool.java:127)
+TRACE 301044:
+	sun.util.locale.provider.JRELocaleProviderAdapter.getCurrencyNameProvider(JRELocaleProviderAdapter.java:223)
+TRACE 301045:
+	sun.util.locale.provider.SPILocaleProviderAdapter.findInstalledProvider(SPILocaleProviderAdapter.java:74)
+TRACE 301046:
+	sun.util.locale.provider.SPILocaleProviderAdapter$1.<init>(SPILocaleProviderAdapter.java:74)
+TRACE 301047:
+	java.util.Currency.getSymbol(Currency.java:508)
+TRACE 301048:
+	java.util.Currency$CurrencyNameGetter.<init>(Currency.java:627)
+TRACE 301049:
+	java.util.Currency.getSymbol(Currency.java:508)
+TRACE 301050:
+	sun.util.resources.en.CurrencyNames_en_GB.getContents(CurrencyNames_en_GB.java:7)
+TRACE 301051:
+	sun.util.resources.en.CurrencyNames_en_GB.getContents(CurrencyNames_en_GB.java:7)
+TRACE 301052:
+	sun.util.resources.en.CurrencyNames_en_GB.getContents(CurrencyNames_en_GB.java:7)
+TRACE 301053:
+	java.util.HashMap.keySet(HashMap.java:908)
+TRACE 301054:
+	java.util.regex.Pattern.matcher(Pattern.java:1093)
+TRACE 301055:
+	java.util.regex.Matcher.<init>(Matcher.java:219)
+TRACE 301056:
+	java.util.regex.Matcher.<init>(Matcher.java:225)
+TRACE 301057:
+	java.util.regex.Matcher.<init>(Matcher.java:226)
+TRACE 301058:
+	java.util.Formatter.parse(Formatter.java:2560)
+TRACE 301059:
+	java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2705)
+TRACE 301060:
+	java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2616)
+TRACE 301061:
+	java.util.Formatter$Flags.<init>(Formatter.java:4411)
+TRACE 301062:
+	java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2690)
+TRACE 301063:
+	java.util.Formatter$FormatSpecifier.checkGeneral(Formatter.java:2955)
+TRACE 301064:
+	java.util.Formatter.parse(Formatter.java:2557)
+TRACE 301065:
+	java.util.Formatter$FixedString.<init>(Formatter.java:2592)
+TRACE 301066:
+	java.util.Formatter.parse(Formatter.java:2571)
+TRACE 301067:
+	java.util.Formatter$FormatSpecifier.printString(Formatter.java:2875)
+TRACE 301068:
+	org.apache.maven.surefire.api.util.internal.ClassMethod.<init>(ClassMethod.java:36)
+TRACE 301069:
+	org.apache.maven.surefire.api.testset.ResolvedTest$ClassMatcher.matchClassPatter(ResolvedTest.java:423)
+TRACE 301070:
+	org.apache.maven.surefire.shared.utils.io.MatchPatterns.from(MatchPatterns.java:86)
+TRACE 301071:
+	org.apache.maven.surefire.shared.utils.io.MatchPattern.<init>(MatchPattern.java:50)
+TRACE 301072:
+	org.apache.maven.surefire.shared.utils.io.MatchPattern.tokenizePathToString(MatchPattern.java:141)
+TRACE 301073:
+	org.apache.maven.surefire.shared.utils.io.MatchPatterns.<init>(MatchPatterns.java:36)
+TRACE 301074:
+	org.junit.internal.runners.model.EachTestNotifier.<init>(EachTestNotifier.java:14)
+TRACE 301075:
+	org.junit.runners.model.Statement.<init>(Statement.java:10)
+TRACE 301076:
+	org.junit.runners.ParentRunner$ClassRuleCollector.<init>(ParentRunner.java:564)
+TRACE 301077:
+	org.junit.runners.RuleContainer$1.<init>(RuleContainer.java:41)
+TRACE 301078:
+	org.junit.runners.ParentRunner$4.<init>(ParentRunner.java:329)
+TRACE 301079:
+	org.junit.internal.runners.model.ReflectiveCallable.<init>(ReflectiveCallable.java:9)
+TRACE 301080:
+	org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+TRACE 301081:
+	org.junit.Assert.<init>(Assert.java:29)
+TRACE 301082:
+	org.junit.runners.RuleContainer.<init>(RuleContainer.java:21)
+TRACE 301083:
+	org.junit.runners.BlockJUnit4ClassRunner$RuleCollector.<init>(BlockJUnit4ClassRunner.java:459)
+TRACE 301084:
+	org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+TRACE 301085:
+	com.google.zxing.common.BitArray.<init>(BitArray.java:36)
+TRACE 301086:
+	com.google.zxing.common.BitArray.makeArray(BitArray.java:323)
+TRACE 301087:
+	com.google.zxing.oned.rss.expanded.decoders.AbstractExpandedDecoder.<init>(AbstractExpandedDecoder.java:42)
+TRACE 301088:
+	com.google.zxing.oned.rss.expanded.decoders.GeneralAppIdDecoder.<init>(GeneralAppIdDecoder.java:43)
+TRACE 301089:
+	com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState.<init>(CurrentParsingState.java:43)
+TRACE 301090:
+	com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State.<clinit>(CurrentParsingState.java:37)
+TRACE 301091:
+	java.lang.ThreadLocal$ThreadLocalMap.<init>(ThreadLocal.java:365)
+TRACE 301092:
+	java.lang.ThreadLocal$ThreadLocalMap.<init>(ThreadLocal.java:366)
+TRACE 301093:
+	java.util.concurrent.CopyOnWriteArrayList.remove(CopyOnWriteArrayList.java:557)
+TRACE 301094:
+	org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelEncoder.sendSystemProperties(LegacyMasterProcessChannelEncoder.java:131)
+TRACE 301095:
+	org.apache.maven.surefire.api.suite.RunResult.<init>(RunResult.java:88)
+TRACE 301096:
+	org.apache.maven.surefire.booter.ForkedBooter$6.<init>(ForkedBooter.java:403)
+TRACE 301097:
+	org.apache.maven.surefire.booter.ForkedBooter$7.<init>(ForkedBooter.java:454)
+TRACE 301098:
+	java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:530)
+TRACE 301099:
+	java.util.concurrent.FutureTask.<init>(FutureTask.java:151)
+TRACE 301100:
+	java.util.concurrent.Executors.callable(Executors.java:407)
+TRACE 301101:
+	java.util.concurrent.Executors$RunnableAdapter.<init>(Executors.java:506)
+TRACE 301102:
+	java.util.concurrent.ThreadPoolExecutor.addWorker(ThreadPoolExecutor.java:932)
+TRACE 301103:
+	java.lang.ThreadLocal$ThreadLocalMap.<init>(ThreadLocal.java:379)
+TRACE 301104:
+	java.lang.ThreadLocal$ThreadLocalMap.<init>(ThreadLocal.java:383)
+TRACE 301105:
+	java.util.concurrent.locks.AbstractQueuedSynchronizer$Node.<init>(AbstractQueuedSynchronizer.java:510)
+TRACE 301106:
+	org.apache.maven.surefire.booter.ForkedBooter$1.<init>(ForkedBooter.java:210)
+TRACE 301107:
+	java.util.HashMap$KeySet.iterator(HashMap.java:917)
+TRACE 301108:
+	java.util.IdentityHashMap.keySet(IdentityHashMap.java:969)
+TRACE 301109:
+	java.util.IdentityHashMap$KeySet.iterator(IdentityHashMap.java:977)
+TRACE 301110:
+	java.util.IdentityHashMap$IdentityHashMapIterator.<init>(IdentityHashMap.java:713)
+SITES BEGIN (ordered by live bytes) Mon Aug 16 21:26:16 2021
+          percent          live          alloc'ed  stack class
+ rank   self  accum     bytes objs     bytes  objs trace name
+    1 19.00% 19.00%   1840024 3409   1840024  3409 300044 byte[]
+    2 12.20% 31.20%   1181224 5375   1181224  5375 300010 char[]
+    3 10.90% 42.10%   1055208 7655   1055208  7655 300012 char[]
+    4 10.85% 52.95%   1050624  128   1050624   128 300721 byte[]
+    5  8.38% 61.32%    810968  297    810968   297 300131 byte[]
+    6  3.48% 64.80%    336720 1908    336720  1908 300114 byte[]
+    7  3.27% 68.07%    316192 2600    316192  2600 300113 char[]
+    8  2.45% 70.52%    237680 3496    237680  3496 300009 char[]
+    9  1.83% 72.35%    176816  482    176816   482 300043 byte[]
+   10  1.82% 74.17%    176664 7361    176664  7361 300011 java.lang.String
+   11  1.62% 75.80%    157280  608    157280   608 300187 char[]
+   12  1.62% 77.42%    156816  297    156816   297 300130 byte[]
+   13  1.13% 78.55%    109832 1158    109832  1158 300165 char[]
+   14  1.02% 79.57%     98496   12     98496    12 300149 byte[]
+   15  0.78% 80.35%     75960 3165     75960  3165 300008 java.lang.StringBuilder
+   16  0.76% 81.11%     73760    2     73760     2 300379 byte[]
+   17  0.68% 81.79%     65552    1     65552     1 300367 byte[]
+   18  0.62% 82.41%     60224  941     60224   941 300186 java.net.URL
+   19  0.60% 83.02%     58512 2438     58512  2438 300060 java.lang.String
+   20  0.45% 83.47%     43616 1363     43616  1363 300162 java.util.concurrent.ConcurrentHashMap$Node
+   21  0.44% 83.91%     42752 1336     42752  1336 300058 java.util.HashMap$Node
+   22  0.37% 84.28%     35872  287     35872   287 300118 char[]
+   23  0.34% 84.62%     32928    8     32928     8 300329 byte[]
+   24  0.34% 84.96%     32800    2     32800     2 300330 char[]
+   25  0.34% 85.30%     32800    2     32800     2 300524 char[]
+   26  0.29% 85.59%     28392  173     28392   173 300157 java.util.HashMap$Node[]
+   27  0.28% 85.87%     27576  200     27576   200 300714 byte[]
+   28  0.28% 86.16%     27552  287     27552   287 300120 java.util.jar.JarFile$JarFileEntry
+   29  0.27% 86.43%     26440  661     26440   661 300029 java.lang.ref.Finalizer
+   30  0.26% 86.69%     24744 1031     24744  1031 300659 sun.misc.ProxyGenerator$ConstantPool$IndirectEntry
+   31  0.25% 86.94%     24448  326     24448   326 300459 int[]
+   32  0.25% 87.19%     23784   35     23784    35 300159 byte[]
+   33  0.24% 87.42%     22960  287     22960   287 300116 java.util.zip.ZipEntry
+   34  0.21% 87.63%     20160  212     20160   212 300175 java.lang.Object[]
+   35  0.18% 87.82%     17824   18     17824    18 300226 java.util.concurrent.ConcurrentHashMap$Node[]
+   36  0.17% 87.99%     16632  297     16632   297 300122 java.util.zip.ZipFile$ZipFileInflaterInputStream
+   37  0.17% 88.16%     16632  297     16632   297 300122 java.util.zip.ZipFile$ZipFileInputStream
+   38  0.17% 88.33%     16416    2     16416     2 300239 byte[]
+   39  0.15% 88.48%     14712  130     14712   130 300725 char[]
+   40  0.15% 88.63%     14592  912     14592   912 300005 java.lang.Short
+   41  0.15% 88.78%     14176  886     14176   886 300160 java.lang.Object
+   42  0.15% 88.92%     14064  586     14064   586 300164 java.net.URLClassLoader$1
+   43  0.14% 89.06%     13552  154     13552   154 300037 java.lang.reflect.Method
+   44  0.12% 89.19%     11880  297     11880   297 300029 java.util.WeakHashMap$Entry
+   45  0.12% 89.31%     11720  293     11720   293 300176 java.lang.ClassNotFoundException
+   46  0.11% 89.42%     10912  341     10912   341 300458 sun.misc.FDBigInteger
+   47  0.11% 89.53%     10800  106     10800   106 300070 char[]
+   48  0.11% 89.64%     10784  337     10784   337 300290 java.io.File
+   49  0.10% 89.74%      9376  293      9376   293 300196 java.security.CodeSource
+   50  0.09% 89.83%      8736  273      8736   273 300190 sun.misc.URLClassPath$JarLoader$2
+   51  0.09% 89.92%      8632  128      8632   128 300722 byte[]
+   52  0.09% 90.01%      8480   72      8480    72 300191 char[]
+   53  0.08% 90.09%      8176  146      8176   146 300112 sun.nio.cs.UTF_8$Encoder
+   54  0.08% 90.17%      7944  331      7944   331 300008 java.lang.StringBuffer
+   55  0.08% 90.25%      7560  189      7560   189 300058 java.util.LinkedHashMap$Entry
+   56  0.08% 90.33%      7520  235      7520   235 300277 java.util.ArrayList$Itr
+   57  0.08% 90.40%      7320  305      7320   305 300096 java.util.ArrayList
+   58  0.07% 90.48%      7128  297      7128   297 300129 byte[]
+   59  0.07% 90.54%      6336   12      6336    12 300150 byte[]
+   60  0.06% 90.61%      6240  130      6240   130 300117 sun.nio.cs.US_ASCII$Decoder
+   61  0.06% 90.67%      6144  256      6144   256 300005 java.lang.Long
+   62  0.06% 90.73%      6144  128      6144   128 300720 org.apache.maven.surefire.shared.codec.binary.BaseNCodec$Context
+   63  0.06% 90.79%      5616  117      5616   117 300091 java.util.HashMap
+   64  0.06% 90.85%      5328  100      5328   100 300152 char[]
+   65  0.05% 90.90%      5232  327      5232   327 300659 sun.misc.ProxyGenerator$ConstantPool$ValueEntry
+   66  0.05% 90.95%      5184  216      5184   216 300111 byte[]
+   67  0.05% 91.00%      4896  153      4896   153 300241 java.util.Hashtable$Entry
+   68  0.05% 91.05%      4688  293      4688   293 300195 byte[]
+   69  0.05% 91.10%      4608   96      4608    96 300109 java.nio.HeapByteBuffer
+   70  0.05% 91.15%      4368  273      4368   273 300188 sun.net.www.ParseUtil
+   71  0.04% 91.19%      4128    2      4128     2 300238 char[]
+   72  0.04% 91.23%      4128    2      4128     2 300240 char[]
+   73  0.04% 91.27%      4112   97      4112    97 300287 java.lang.Object[]
+   74  0.04% 91.32%      4096  256      4096   256 300005 java.lang.Byte
+   75  0.04% 91.36%      3920   70      3920    70 300112 sun.nio.cs.US_ASCII$Encoder
+   76  0.04% 91.39%      3680    7      3680     7 301026 int[]
+   77  0.04% 91.43%      3600   50      3600    50 300037 java.lang.reflect.Field
+   78  0.04% 91.47%      3520  110      3520   110 300042 java.io.File
+   79  0.03% 91.50%      3360   60      3360    60 300091 java.util.LinkedHashMap
+   80  0.03% 91.54%      3200   40      3200    40 300037 java.lang.reflect.Constructor
+   81  0.03% 91.57%      3120  130      3120   130 300723 java.lang.String
+   82  0.03% 91.60%      3064    4      3064     4 300579 byte[]
+   83  0.03% 91.63%      3040   76      3040    76 300029 java.lang.ref.SoftReference
+   84  0.03% 91.66%      3016   62      3016    62 300224 java.lang.reflect.Method[]
+   85  0.03% 91.69%      2856  119      2856   119 300154 java.util.jar.Attributes$Name
+   86  0.03% 91.72%      2688   48      2688    48 300036 java.lang.Class$ReflectionData
+   87  0.03% 91.75%      2688   28      2688    28 300161 java.util.concurrent.ConcurrentHashMap$Node[]
+   88  0.03% 91.77%      2544  106      2544   106 300069 java.lang.String
+   89  0.03% 91.80%      2520   45      2520    45 300193 java.lang.Package
+   90  0.03% 91.82%      2432   38      2432    38 300172 java.net.URL
+   91  0.02% 91.85%      2400  100      2400   100 300151 java.lang.String
+   92  0.02% 91.87%      2304   96      2304    96 300670 sun.misc.ProxyGenerator$ExceptionTableEntry
+   93  0.02% 91.90%      2304   48      2304    48 300144 byte[]
+   94  0.02% 91.92%      2160    9      2160     9 300242 java.util.Hashtable$Entry[]
+   95  0.02% 91.94%      1920   40      1920    40 300657 sun.misc.ProxyGenerator$MethodInfo
+   96  0.02% 91.96%      1920    2      1920     2 300456 sun.misc.FDBigInteger[]
+   97  0.02% 91.98%      1920   18      1920    18 300673 byte[]
+   98  0.02% 92.00%      1880    5      1880     5 300001 java.lang.Thread
+   99  0.02% 92.02%      1808   54      1808    54 300578 byte[]
+  100  0.02% 92.03%      1728   27      1728    27 300091 java.util.concurrent.ConcurrentHashMap
+  101  0.02% 92.05%      1680   70      1680    70 300713 sun.nio.cs.Surrogate$Parser
+  102  0.02% 92.07%      1680   30      1680    30 300174 sun.misc.URLClassPath$JarLoader
+  103  0.02% 92.09%      1664   52      1664    52 300062 java.io.DataOutputStream
+  104  0.02% 92.10%      1632   68      1632    68 300378 org.apache.maven.surefire.api.util.internal.ImmutableMap$Node
+  105  0.02% 92.12%      1584    2      1584     2 300425 java.lang.Long[]
+  106  0.02% 92.14%      1584    2      1584     2 300429 java.lang.Byte[]
+  107  0.02% 92.15%      1584    2      1584     2 300427 java.lang.Short[]
+  108  0.02% 92.17%      1488   62      1488    62 301094 java.lang.String[]
+  109  0.02% 92.18%      1464   61      1464    61 300223 java.lang.Class$MethodArray
+  110  0.02% 92.20%      1456   14      1456    14 300201 sun.net.www.protocol.file.FileURLConnection
+  111  0.01% 92.21%      1360   85      1360    85 300743 org.junit.runners.model.FrameworkMethod
+  112  0.01% 92.23%      1360    1      1360     1 300585 byte[]
+  113  0.01% 92.24%      1360    5      1360     5 300484 boolean[]
+  114  0.01% 92.25%      1296    3      1296     3 300000 java.lang.Thread
+  115  0.01% 92.27%      1248   52      1248    52 300661 byte[]
+  116  0.01% 92.28%      1248   45      1248    45 300613 sun.reflect.generics.tree.TypeArgument[]
+  117  0.01% 92.29%      1232    1      1232     1 301030 char[]
+  118  0.01% 92.30%      1152   48      1152    48 300062 java.io.ByteArrayOutputStream
+  119  0.01% 92.32%      1152   24      1152    24 300125 java.util.zip.Inflater
+  120  0.01% 92.33%      1120   28      1120    28 300652 sun.misc.ProxyGenerator$ProxyMethod
+  121  0.01% 92.34%      1120   14      1120    14 300094 java.util.WeakHashMap$Entry[]
+  122  0.01% 92.35%      1120   14      1120    14 300097 java.lang.Object[]
+  123  0.01% 92.36%      1104   46      1104    46 300305 java.util.Collections$UnmodifiableCollection$1
+  124  0.01% 92.37%      1056   44      1056    44 300611 sun.reflect.generics.parser.SignatureParser
+  125  0.01% 92.38%      1056   44      1056    44 300623 sun.reflect.generics.visitor.Reifier
+  126  0.01% 92.39%      1056   44      1056    44 300619 sun.reflect.generics.scope.ClassScope
+  127  0.01% 92.41%      1056   44      1056    44 300621 sun.reflect.generics.factory.CoreReflectionFactory
+  128  0.01% 92.42%      1056   44      1056    44 300615 sun.reflect.generics.tree.SimpleClassTypeSignature
+  129  0.01% 92.43%      1040    1      1040     1 300019 java.lang.invoke.MethodHandle[]
+  130  0.01% 92.44%      1040   26      1040    26 300423 java.util.ArrayList$SubList$1
+  131  0.01% 92.45%      1040   26      1040    26 300096 java.util.ArrayList$SubList
+  132  0.01% 92.46%      1008    7      1008     7 300467 int[]
+SITES END

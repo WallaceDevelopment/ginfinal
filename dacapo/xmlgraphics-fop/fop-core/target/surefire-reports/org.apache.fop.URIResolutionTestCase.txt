@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.fop.URIResolutionTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.847 sec - in org.apache.fop.URIResolutionTestCase

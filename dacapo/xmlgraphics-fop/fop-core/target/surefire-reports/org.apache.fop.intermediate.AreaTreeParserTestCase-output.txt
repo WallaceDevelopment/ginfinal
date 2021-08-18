@@ -1,0 +1,64 @@
+Aug 05, 2021 8:28:55 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 8721 (0x2211, summation) not available in font Helvetica
+Aug 05, 2021 8:28:55 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 115 (0x73, s) not available in font Symbol
+Aug 05, 2021 8:28:55 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 121 (0x79, y) not available in font Symbol
+Aug 05, 2021 8:28:55 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 109 (0x6d, m) not available in font Symbol
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1606 (0x646, afii57446) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1576 (0x628, afii57416) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1578 (0x62a, afii57418) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1575 (0x627, afii57415) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1606 (0x646, afii57446) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1610 (0x64a, afii57450) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1576 (0x628, afii57416) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1604 (0x644, afii57444) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1605 (0x645, afii57445) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1603 (0x643, afii57443) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1604 (0x644, afii57444) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1577 (0x629, afii57417) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1610 (0x64a, afii57450) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1601 (0x641, afii57441) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1585 (0x631, afii57425) not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Many requested glyphs are not available in font Times-Roman
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1583 (0x62f, afii57423) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1602 (0x642, afii57442) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1578 (0x62a, afii57418) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1601 (0x641, afii57441) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1606 (0x646, afii57446) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1575 (0x627, afii57415) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1603 (0x643, afii57443) not available in font Helvetica
+Aug 05, 2021 8:28:56 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Many requested glyphs are not available in font Helvetica
+Aug 05, 2021 8:29:03 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1633 (0x661, afii57393) not available in font Helvetica
+Aug 05, 2021 8:29:03 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1606 (0x646, afii57446) not available in font Helvetica
+Aug 05, 2021 8:29:03 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 1576 (0x628, afii57416) not available in font Helvetica
+Aug 05, 2021 8:29:04 PM org.apache.fop.layoutmgr.table.ColumnSetup computeTableUnit
+WARNING: No space remaining to distribute over columns.

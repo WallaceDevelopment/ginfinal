@@ -1,0 +1,50 @@
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker convertProperty
+WARNING: Replaced negative value (-10000mpt) for block-progression-dimension with 0mpt (fo:flow, location: 9:42)
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-10000mpt) for block-progression-dimension with 0mpt
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-20000mpt) for block-progression-dimension with 0mpt
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-30000mpt) for block-progression-dimension with 0mpt
+Test: column-number_negative-or-zero.fo
+  [WARN ] Negative value 0 of property column-number of element fo:table-column forced into the next available column number 1. (See position 31:64)
+  [WARN ] Negative value -1.0 of property column-number of element fo:table-column forced into the next available column number 2. (See position 34:64)
+  [WARN ] Negative value -3.0 of property column-number of element fo:table-cell forced into the next available column number 1. (See position 39:47)
+  [WARN ] Negative value 0 of property column-number of element fo:table-cell forced into the next available column number 2. (See position 43:46)
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker convertProperty
+WARNING: Replaced negative value (-10000mpt) for inline-progression-dimension with 0mpt (fo:flow, location: 9:42)
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-10000mpt) for inline-progression-dimension with 0mpt
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-20000mpt) for inline-progression-dimension with 0mpt
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.LengthRangeProperty$Maker setSubprop
+WARNING: Replaced negative value (-30000mpt) for inline-progression-dimension with 0mpt
+Test: xml_base.fo
+  [ERROR] Image not found. URI: http://foo.bar.com/resources/images/image-1.png. (See position 28:60)
+  [ERROR] Image not found. URI: http://foo.bar.com/resources/images/image-1.png. (See position 33:50)
+  [ERROR] Image not found. URI: http://foo.bar.com/resources/images/image-1.png. (See position 39:50)
+  [ERROR] Image not found. URI: images/image-1.png. (See position 46:55)
+  [ERROR] Image not found. URI: resources/images/image-1.png. (See position 52:55)
+  [ERROR] Image not found. URI: http://foo.bar.com/resources%20with%20spaces/images/image-1.png. (See position 58:48)
+  [ERROR] Image not found. URI: resources%20with%20spaces/images/image-1.png. (See position 64:48)
+  [ERROR] Image not found. URI: http://foo.bar.com/resources with spaces/images/image-1.png. (See position 70:96)
+  [ERROR] Image not found. URI: ./resources with spaces/images/image-1.png. (See position 74:86)
+Test: column-number_non-integer.fo
+  [WARN ] Negative value -1.0 of property column-number of element fo:table-column forced into the next available column number 2. (See position 34:64)
+  [WARN ] Negative value -3.03 of property column-number of element fo:table-cell forced into the next available column number 1. (See position 39:50)
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-width to "auto"
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-height to "auto"
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-height to "auto"
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-height to "auto"
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-height to "auto"
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.PageDimensionMaker get
+WARNING: Both page-width and page-height set to "indefinite". Forcing page-width to "auto"
+Test: text-decoration_invalid_bug51032.fo
+  [ERROR] Invalid property value encountered in text-decoration="italic": org.apache.fop.fo.expr.PropertyException: file:/Users/wallace/gin_projects/xmlgraphics-fop/fop/test/fotree/testcases/text-decoration_invalid_bug51032.fo:27:17: Invalid value specified: italic; property:'text-decoration' (See position 28:45)
+Aug 05, 2021 8:28:11 PM org.apache.fop.fo.properties.FontFamilyProperty$Maker make
+WARNING: Skipping malformed value for font-family: 'Times New 'Roman in "'Times New 'Roman, serif".

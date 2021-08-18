@@ -1,0 +1,4 @@
+Aug 06, 2021 3:06:32 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Font "Symbol,normal,700" not found. Substituting with "Symbol,normal,400".
+Aug 06, 2021 3:06:32 AM org.apache.fop.events.LoggingEventListener processEvent
+WARNING: Font "ZapfDingbats,normal,700" not found. Substituting with "ZapfDingbats,normal,400".

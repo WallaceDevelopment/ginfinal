@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.fop.fo.properties.CommonAccessibilityHolderTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.713 sec - in org.apache.fop.fo.properties.CommonAccessibilityHolderTestCase

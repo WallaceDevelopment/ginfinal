@@ -1,0 +1,2 @@
+Aug 05, 2021 11:32:26 PM org.apache.fop.complexscripts.fonts.GlyphClassTable$CoverageSetClassTable <init>
+WARNING: coverage set class table not yet supported

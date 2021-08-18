@@ -1,0 +1,15 @@
+org/apache/fop/util/text/AdvancedMessageFormat$FunctionPart.class
+org/apache/fop/util/XMLResourceBundle.class
+org/apache/fop/util/DefaultErrorListener.class
+org/apache/fop/util/text/AdvancedMessageFormat$TextPart.class
+org/apache/fop/util/text/AdvancedMessageFormat$CompositePart.class
+org/apache/fop/util/XMLResourceBundle$2.class
+org/apache/fop/util/text/AdvancedMessageFormat.class
+org/apache/fop/util/text/AdvancedMessageFormat$Part.class
+org/apache/fop/util/text/AdvancedMessageFormat$Function.class
+org/apache/fop/util/text/AdvancedMessageFormat$SimpleFieldPart.class
+org/apache/fop/util/XMLResourceBundle$1.class
+org/apache/fop/util/text/AdvancedMessageFormat$PartFactory.class
+org/apache/fop/util/XMLResourceBundle$CatalogueHandler.class
+org/apache/fop/util/XMLResourceBundle$MissingBundle.class
+org/apache/fop/util/text/AdvancedMessageFormat$ObjectFormatter.class

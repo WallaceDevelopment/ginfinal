@@ -1,0 +1,4 @@
+Aug 06, 2021 12:50:52 AM org.apache.fop.fonts.type1.PFMFile load
+WARNING: PFM version expected to be '256' but got '0'. Please make sure you specify the PFM as parameter and not the PFB or the AFM.
+Aug 06, 2021 12:50:52 AM org.apache.fop.fonts.type1.PFMFile loadExtension
+WARNING: Size of extension block was expected to be 30 bytes, but was 0 bytes.

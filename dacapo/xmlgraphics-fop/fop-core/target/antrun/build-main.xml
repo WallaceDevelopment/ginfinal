@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef classname="org.apache.fop.tools.EventProducerCollectorTask" name="collectEvents" classpathref="maven.compile.classpath"/>
+  <collectEvents destdir="/Users/wallace/gin_projects/xmlgraphics-fop/fop-core/target/classes">
+    <fileset dir="/Users/wallace/gin_projects/xmlgraphics-fop/fop-core/src/main/java">
+      <include name="**/accessibility/AccessibilityEventProducer.java"/>
+      <include name="**/afp/AFPEventProducer.java"/>
+      <include name="**/area/AreaEventProducer.java"/>
+      <include name="**/fo/flow/table/TableEventProducer.java"/>
+      <include name="**/fo/FOValidationEventProducer.java"/>
+      <include name="**/fonts/FontEventProducer.java"/>
+      <include name="**/layoutmgr/BlockLevelEventProducer.java"/>
+      <include name="**/layoutmgr/inline/InlineLevelEventProducer.java"/>
+      <include name="**/render/bitmap/BitmapRendererEventProducer.java"/>
+      <include name="**/render/pcl/PCLEventProducer.java"/>
+      <include name="**/render/pdf/extensions/PDFExtensionEventProducer.java"/>
+      <include name="**/render/pdf/PDFEventProducer.java"/>
+      <include name="**/render/ps/PSEventProducer.java"/>
+      <include name="**/render/RendererEventProducer.java"/>
+      <include name="**/render/rtf/RTFEventProducer.java"/>
+      <include name="**/ResourceEventProducer.java"/>
+      <include name="**/svg/SVGEventProducer.java"/>
+    </fileset>
+  </collectEvents>
+</target>
+</project>

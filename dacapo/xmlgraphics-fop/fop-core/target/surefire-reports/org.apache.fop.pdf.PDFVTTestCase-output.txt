@@ -1,0 +1,6 @@
+Aug 06, 2021 1:43:23 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.
+Aug 06, 2021 1:43:23 AM org.apache.fop.render.pdf.PDFRenderingUtil setupPDFDocument
+WARNING: Note: PDF/X-4 support is work-in-progress and not fully implemented, yet!
+Aug 06, 2021 1:43:24 AM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.

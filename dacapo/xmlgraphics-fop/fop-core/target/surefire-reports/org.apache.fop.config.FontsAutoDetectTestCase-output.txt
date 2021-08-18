@@ -1,0 +1,2 @@
+Aug 05, 2021 11:51:16 PM org.apache.fop.events.LoggingEventListener processEvent
+INFO: Rendered page #1.

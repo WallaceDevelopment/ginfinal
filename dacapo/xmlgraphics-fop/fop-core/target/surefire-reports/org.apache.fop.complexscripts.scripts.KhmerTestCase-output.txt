@@ -1,0 +1,16 @@
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6043 (0x179b, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6081 (0x17c1, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6017 (0x1781, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6042 (0x179a, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6080 (0x17c0, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6020 (0x1784, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Glyph 6071 (0x17b7, ) not available in font null
+Aug 05, 2021 11:35:26 PM org.apache.fop.fonts.Typeface warnMissingGlyph
+WARNING: Many requested glyphs are not available in font null

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.fop.render.pcl.PCLPainterTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.731 sec - in org.apache.fop.render.pcl.PCLPainterTestCase
